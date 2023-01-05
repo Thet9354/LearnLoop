@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottom_nav_main"
+        android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24"
+        app:cnb_backgroundColor="@color/main"
+        app:cnb_iconColor="@color/white"
+        app:cnb_textColor="@color/white"/>
+
+    <item
+        android:id="@+id/bottom_nav_addtransaction"
+        android:title="Add Transaction"
+        android:icon="@drawable/ic_baseline_post_add_24"
+        app:cnb_backgroundColor="@color/add"
+        app:cnb_iconColor="@color/white"
+        app:cnb_textColor="@color/white"/>
+
+    <item
+        android:id="@+id/bottom_nav_learning"
+        android:title="Looprary"
+        android:icon="@drawable/ic_baseline_local_library_24"
+        app:cnb_backgroundColor="@color/looprary"
+        app:cnb_iconColor="@color/black"
+        app:cnb_textColor="@color/black"/>
+
+    <item
+        android:id="@+id/bottom_nav_discount"
+        android:title="Discount"
+        android:icon="@drawable/ic_baseline_discount_24"
+        app:cnb_backgroundColor="@color/discount"
+        app:cnb_iconColor="@color/black"
+        app:cnb_textColor="@color/black"/>
+</menu>

@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.LoopraryFragment"
+    android:background="@color/black_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/learnloop_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    app:srcCompat="@drawable/learnloop_icon" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/welcomeLoopMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/apoppins"
+                    android:text="Welcome to "
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Looprary!"
+                    android:textSize="32dp"
+                    android:gravity="bottom"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/apoppins"
+                    android:textColor="@color/pink" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/apoppins"
+                android:text="What would you like to learn today?"
+                android:textColor="@color/blue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/askAllowanceTV3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/apoppins"
+                android:text="Events"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <RelativeLayout
+                android:id="@+id/smu_event_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_rect_10"
+                android:clickable="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                >
+
+                <ImageView
+                    android:id="@+id/SMU_CFL_PIC"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/rounded_rect_10_white"
+                    android:src="@drawable/smu_citi_financial_literacy" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/smu_title"
+                    android:textSize="15dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/thin_poppins"
+                    android:layout_below="@id/SMU_CFL_PIC"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/hoster"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView17"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/smu_logo" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_toRightOf="@id/imageView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/thin_poppins"
+                        android:text="@string/smu_name"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/imageView6"
+                        android:layout_below="@id/textView18"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/thin_poppins"
+                        android:text="@string/smu_subname"
+                        android:textColor="@color/hint"
+                        android:textSize="10dp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,200+ Participants"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:fontFamily="@font/thin_poppins"
+                    android:layout_below="@id/hoster"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/hoster"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@id/textView22"
+                    android:clickable="true"
+                    android:drawablePadding="5dp"
+                    android:drawableRight="@drawable/ic_baseline_calendar_month_24"
+                    android:fontFamily="@font/thin_poppins"
+                    android:gravity="right|bottom"
+                    android:text="Remind Me"
+                    android:textColor="@color/blue"
+                    android:textSize="12dp"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/askAllowanceTV10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/apoppins"
+                android:text="In progress"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <RelativeLayout
+                android:id="@+id/inprogress_courseRL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/rounded_rect_10">
+
+                <ImageView
+                    android:id="@+id/BUDGETING_PRINCIPLES"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/rounded_rect_10_white"
+                    android:src="@drawable/budgeting_principles" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/BUDGETING_PRINCIPLES"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/thin_poppins"
+                    android:text="@string/course1_title"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <RelativeLayout
+                    android:id="@+id/course1_hoster"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView21"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/sing_pfp" />
+
+                    <TextView
+                        android:id="@+id/textView29"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toRightOf="@id/imageView1"
+                        android:fontFamily="@font/thin_poppins"
+                        android:text="@string/course1_lecturer"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentEnd="true">
+
+                        <TextView
+                            android:id="@+id/textView26"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:drawableLeft="@drawable/ic_baseline_star_24"
+                            android:drawablePadding="5dp"
+                            android:gravity="left"
+                            android:text="4.9"
+                            android:textColor="@color/white"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/saveButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="15dp"
+                            android:clickable="true"
+                            android:drawableLeft="@drawable/save_icon"
+                            android:drawablePadding="5dp"
+                            android:fontFamily="@font/thin_poppins"
+                            android:gravity="left"
+                            android:padding="3dp"
+                            android:text="Save"
+                            android:textColor="@color/white"
+                            android:textSize="12dp"
+                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/TextView41"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView29"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toRightOf="@id/imageView1"
+                        android:fontFamily="@font/thin_poppins"
+                        android:text="@string/course1_lecturerpos"
+                        android:textColor="@color/hint"
+                        android:textSize="10dp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/course1_hoster"
+                    android:gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/thin_poppins"
+                    android:text="Remaining: 4 Lessons"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:layout_alignParentBottom="false"
+                    />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/askAllowanceTV11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/apoppins"
+                android:text="Courses"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                >
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="90dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_rect_10">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/course_pic2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    app:srcCompat="@drawable/course_investments101" />
+
+                                <TextView
+                                    android:id="@+id/course_name2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:fontFamily="@font/thin_poppins"
+                                    android:text="Economics 101"
+                                    android:textColor="@color/white"
+                                    android:textSize="15dp"
+
+                                    />
+
+                                <RelativeLayout
+                                    android:id="@+id/course1_hoster3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_below="@id/textView21"
+                                    android:layout_marginTop="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imageView1_2"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="15dp"
+                                        android:src="@drawable/sing_pfp" />
+
+                                    <TextView
+                                        android:id="@+id/textView29_2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:layout_toRightOf="@id/imageView1_2"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:text="@string/course1_lecturer"
+                                        android:textColor="@color/white"
+                                        android:textSize="12dp" />
+
+                                    <TextView
+                                        android:id="@+id/TextView20_2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/textView29_2"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:layout_toRightOf="@id/imageView1_2"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:text="@string/course1_lecturerpos"
+                                        android:textColor="@color/hint"
+                                        android:textSize="10dp" />
+
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView27_2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:text="5h 33m"
+                                        android:textColor="@color/blue"
+                                        android:textSize="10dp" />
+
+                                    <TextView
+                                        android:id="@+id/textView28_2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:text="45 Lessons"
+                                        android:textColor="@color/white"
+                                        android:textSize="10dp" />
+
+                                    <TextView
+                                        android:id="@+id/saveButton2_2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="15dp"
+                                        android:layout_weight="1"
+                                        android:clickable="true"
+                                        android:drawableLeft="@drawable/save_icon"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:gravity="left"
+                                        android:text="Save"
+                                        android:textColor="@color/white"
+                                        android:textSize="10dp"
+                                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_rect_10">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/course_pic1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    app:srcCompat="@drawable/course_taxes" />
+
+                                <TextView
+                                    android:id="@+id/course_name1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:fontFamily="@font/thin_poppins"
+                                    android:text="Taxes in Singapore"
+                                    android:textColor="@color/white"
+                                    android:textSize="15dp"
+
+                                    />
+
+                                <RelativeLayout
+                                    android:id="@+id/course1_hoster2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_below="@id/textView21"
+                                    android:layout_marginTop="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imageView1_1"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="15dp"
+                                        android:src="@drawable/lim_circle" />
+
+                                    <TextView
+                                        android:id="@+id/textView29_1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:layout_toRightOf="@id/imageView1_1"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:text="Lim Smell Wind"
+                                        android:textColor="@color/white"
+                                        android:textSize="12dp" />
+
+                                    <TextView
+                                        android:id="@+id/TextView20_1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/textView29_1"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:layout_toRightOf="@id/imageView1_1"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:text="Kang's Servant/Butler"
+                                        android:textColor="@color/hint"
+                                        android:textSize="10dp" />
+
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView27_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:text="1h 32m"
+                                        android:textColor="@color/blue"
+                                        android:textSize="10dp" />
+
+                                    <TextView
+                                        android:id="@+id/textView28_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:text="22 Lessons"
+                                        android:textColor="@color/white"
+                                        android:textSize="10dp" />
+
+                                    <TextView
+                                        android:id="@+id/saveButton2_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="15dp"
+                                        android:layout_weight="1"
+                                        android:clickable="true"
+                                        android:drawableLeft="@drawable/save_icon"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:gravity="left"
+                                        android:text="Save"
+                                        android:textColor="@color/white"
+                                        android:textSize="10dp"
+                                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_rect_10">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/course_pic"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    app:srcCompat="@drawable/course_inflation" />
+
+                                <TextView
+                                    android:id="@+id/course_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Inflation and its Impacts"
+                                    android:textColor="@color/white"
+                                    android:textSize="15dp"
+                                    android:fontFamily="@font/thin_poppins"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginTop="10dp"
+
+                                    />
+
+                                <RelativeLayout
+                                    android:id="@+id/course1_hoster1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_below="@id/textView21"
+                                    android:layout_marginTop="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imageView34"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="15dp"
+                                        android:src="@drawable/bob_circle" />
+
+                                    <TextView
+                                        android:id="@+id/textView33"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:layout_toRightOf="@id/imageView34"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:text="Roger Chiun"
+                                        android:textColor="@color/white"
+                                        android:textSize="12dp" />
+
+                                    <TextView
+                                        android:id="@+id/TextView20"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/textView33"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:layout_toRightOf="@id/imageView34"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:text="@string/course1_lecturerpos"
+                                        android:textColor="@color/hint"
+                                        android:textSize="10dp" />
+
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/textView27"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="5h 33m"
+                                        android:textSize="10dp"
+                                        android:layout_weight="1"
+                                        android:textColor="@color/blue"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:layout_marginStart="10dp"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/textView28"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="45 Lessons"
+                                        android:layout_weight="1"
+                                        android:textColor="@color/white"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:textSize="10dp"/>
+
+                                    <TextView
+                                        android:id="@+id/saveButton2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="15dp"
+                                        android:layout_weight="1"
+                                        android:clickable="true"
+                                        android:drawableLeft="@drawable/save_icon"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:gravity="left"
+                                        android:text="Save"
+                                        android:textColor="@color/white"
+                                        android:textSize="10dp"
+                                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_rect_10">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/course_pic3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    app:srcCompat="@drawable/course_recession" />
+
+                                <TextView
+                                    android:id="@+id/course_name3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Recession and its Impact"
+                                    android:textColor="@color/white"
+                                    android:textSize="15dp"
+                                    android:fontFamily="@font/thin_poppins"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginTop="10dp"
+
+                                    />
+
+                                <RelativeLayout
+                                    android:id="@+id/course1_hoster4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_below="@id/textView21"
+                                    android:layout_marginTop="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imageView1_3"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="15dp"
+                                        android:src="@drawable/gru_circle" />
+
+                                    <TextView
+                                        android:id="@+id/textView29_3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:layout_toRightOf="@id/imageView1_3"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:text="Felonious Gru"
+                                        android:textColor="@color/white"
+                                        android:textSize="12dp" />
+
+                                    <TextView
+                                        android:id="@+id/TextView20_3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/textView29_3"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:layout_toRightOf="@id/imageView1_3"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:text="Ex-Supervillain/Current Anti-Villian League"
+                                        android:textColor="@color/hint"
+                                        android:textSize="10dp" />
+
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/textView27_3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="5h 33m"
+                                        android:textSize="10dp"
+                                        android:layout_weight="1"
+                                        android:textColor="@color/blue"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:layout_marginStart="10dp"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/textView28_3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="45 Lessons"
+                                        android:layout_weight="1"
+                                        android:textColor="@color/white"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:textSize="10dp"/>
+
+                                    <TextView
+                                        android:id="@+id/saveButton2_3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="15dp"
+                                        android:layout_weight="1"
+                                        android:clickable="true"
+                                        android:drawableLeft="@drawable/save_icon"
+                                        android:fontFamily="@font/thin_poppins"
+                                        android:gravity="left"
+                                        android:text="Save"
+                                        android:textColor="@color/white"
+                                        android:textSize="10dp"
+                                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/courses_recycView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <ProgressBar
+                    android:id="@+id/PB_courses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Splash.SplashActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/blue">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            app:srcCompat="@drawable/splashimage" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_rect_50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/learnloop_anim"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:src="@raw/learnloop_anim" />
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/learnloop_anim"
+                android:text="Integrating learning\ninto daily lives. "
+                android:textSize="30dp"
+                android:textColor="@color/blue"
+                android:fontFamily="@font/apoppins"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView2"
+                android:text="Learn and apply your financial literacy\nknowledge into lifestyle."
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/thin_poppins"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

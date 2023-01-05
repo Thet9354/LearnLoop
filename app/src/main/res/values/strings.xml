@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Learn Loop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="app_description1">The app aims to promote the genuine adoption of financial literacy knowledge taught in schools during Education &amp; Career Guidance modules.</string>
+    <string name="app_description2">Even though students are exposed to basic financial literacy concepts such as “Budgeting”, youths do not put it into practice as the modules only provide theoretical knowledge, not practical knowledge.</string>
+    <string name="app_description3">LearnLoop aims to provide the practical knowledge aspect through features such as:\n ⚪ Setting Budgets\n ⚪ Budgeting\n ⚪ Expenditure Tracker\n ⚪ Financial Literacy Courses\n ⚪ Student Discount Library</string>
+
+    <string name="smu_title">Citi Foundation-SMU Financial Literacy Program for Young Adults</string>
+    <string name="smu_name">Singapore Management University</string>
+    <string name="smu_subname">Sim Kee Boon Institute for Financial Economics</string>
+
+    <string name="course1_title">Budgeting Principles</string>
+    <string name="course1_lecturer">Kang Thet Sing</string>
+    <string name="course1_lecturerpos">Senior Lecturer at SP</string>
+
+    <string name="smu_desc">In a competitive landscape where money often has the final word, there is a pressing need for young adults to learn about taking control of their finances. Many will want to start planning a roadmap to financial success. This is where the program aims to help answer the million-dollar question: how to stay the course and build lifelong wealth?\n\nAll of the essentials are included in this world-ready program. These...</string>
+
+
+    <string name="budgeting_principles_desc">Making a budgeting plan is one thing. Sticking to it is another.\n\nThis course focuses on refreshing your budgeting knowledge acquired from school such as concepts, plans, identifying and classification of expenditures and more.\n\nThis course will also guide you on building a sustainable budgeting plan and share tips on how one can stick to the plan in the long r...</string>
+
 </resources>
+
+    <!--    Even though students are exposed to basic financial literacy concepts such as “Budgeting”, youths do not put it into practice as the modules only provide theoretical knowledge, not practical knowledge.-->
+
+    <!--    LearnLoop aims to provide the practical knowledge aspect through features such as:\n ⚪ Setting Budgets\n ⚪ Budgeting\n ⚪ Expenditure Tracker\n ⚪ Financial Literacy Courses\n ⚪ Student Discount Library-->
