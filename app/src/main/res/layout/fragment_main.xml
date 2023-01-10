@@ -29,13 +29,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
                     app:srcCompat="@drawable/learnloop_icon" />
 
                 <ImageView
-                    android:id="@+id/goToAbout_Button"
+                    android:id="@+id/btn_about"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -48,10 +47,11 @@
                     android:minHeight="48dp"
                     android:src="@drawable/ic_baseline_info_24"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/heyNameTV2"
+                android:id="@+id/txtView_welcomeMsg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -86,6 +86,7 @@
                 android:textSize="20sp" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_cardWallet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -105,7 +106,6 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="30dp"
-
                         android:src="@drawable/learnloop_icon" />
 
                     <RelativeLayout
@@ -116,7 +116,7 @@
                         android:paddingBottom="20dp">
 
                         <TextView
-                            android:id="@+id/cardName"
+                            android:id="@+id/txtView_cardName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/apoppins"
@@ -124,10 +124,10 @@
                             android:textColor="@color/white" />
 
                         <TextView
-                            android:id="@+id/textView11"
+                            android:id="@+id/txtView_cardBalance"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/cardName"
+                            android:layout_below="@id/txtView_cardName"
                             android:layout_marginBottom="5dp"
                             android:fontFamily="@font/thin_poppins"
                             android:text="$104.20"
@@ -135,14 +135,14 @@
                             android:textSize="15sp" />
 
                         <TextView
-                            android:id="@+id/textView10"
+                            android:id="@+id/txtView_cardLimit"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/cardName"
-                            android:layout_alignRight="@id/textView10"
+                            android:layout_below="@id/txtView_cardName"
+                            android:layout_alignRight="@id/txtView_cardName"
                             android:layout_marginStart="0dp"
-                            android:layout_toEndOf="@+id/textView11"
-                            android:layout_toRightOf="@id/textView11"
+                            android:layout_toEndOf="@+id/txtView_cardBalance"
+                            android:layout_toRightOf="@id/txtView_cardBalance"
                             android:fontFamily="@font/thin_poppins"
                             android:text="  / $200.00"
                             android:textColor="@color/white"
@@ -174,7 +174,7 @@
                 android:background="@drawable/rounded_rect_10">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recentTransactionsRV"
+                    android:id="@+id/rv_recentTransaction"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="15dp"
@@ -182,9 +182,11 @@
                     android:layout_marginEnd="15dp"
                     android:layout_marginBottom="15dp"
                     android:padding="10dp" />
+
             </RelativeLayout>
 
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

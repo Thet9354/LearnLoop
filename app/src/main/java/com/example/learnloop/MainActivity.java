@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initWidget() {
         chipNavigationBar = findViewById(R.id.menu);
+        chipNavigationBar.setItemSelected(R.id.bottom_nav_main, true);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
 
         bottomMenu();

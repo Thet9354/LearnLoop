@@ -10,8 +10,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,24 +69,23 @@
                 android:textSize="20sp" />
 
             <RadioGroup
-                android:id="@+id/transactionDirectionType"
+                android:id="@+id/rg_transactionFlow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp">
 
                 <RadioButton
-                    android:id="@+id/inflow"
+                    android:id="@+id/rb_inFlow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Inflow"
                     android:textColor="@color/white"
                     android:fontFamily="@font/thin_poppins"
-                    android:padding="3dp"
-                    />
+                    android:padding="3dp" />
 
                 <RadioButton
-                    android:id="@+id/outflow"
+                    android:id="@+id/rb_outFlow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Outflow"
@@ -109,7 +107,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/transactionTitle"
+                android:id="@+id/editTxt_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -127,8 +125,7 @@
                 android:gravity="center_vertical"
                 android:textSize="20dp"
                 android:scrollHorizontally="false"
-                android:singleLine="false"
-                />
+                android:singleLine="false" />
 
             <TextView
                 android:id="@+id/askAllowanceTV5"
@@ -143,7 +140,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/transactionAmount"
+                android:id="@+id/editTxt_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -162,8 +159,7 @@
                 android:gravity="center_vertical"
                 android:textSize="20dp"
                 android:scrollHorizontally="false"
-                android:singleLine="false"
-                />
+                android:singleLine="false" />
 
             <TextView
                 android:id="@+id/askAllowanceTV6"
@@ -178,24 +174,23 @@
                 android:textSize="20sp" />
 
             <RadioGroup
-                android:id="@+id/transactionPurpose"
+                android:id="@+id/rg_transactionPurpose"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp">
 
                 <RadioButton
-                    android:id="@+id/foodAndDrinks"
+                    android:id="@+id/rb_foodAndDrink"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Food and Drinks"
                     android:textColor="@color/white"
                     android:fontFamily="@font/thin_poppins"
-                    android:padding="3dp"
-                    />
+                    android:padding="3dp" />
 
                 <RadioButton
-                    android:id="@+id/entertainment"
+                    android:id="@+id/rb_entertainment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Entertainment"
@@ -204,17 +199,16 @@
                     android:padding="3dp" />
 
                 <RadioButton
-                    android:id="@+id/transport"
+                    android:id="@+id/rb_transport"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Transport"
                     android:textColor="@color/white"
                     android:fontFamily="@font/thin_poppins"
-                    android:padding="3dp"
-                    />
+                    android:padding="3dp" />
 
                 <RadioButton
-                    android:id="@+id/shopping"
+                    android:id="@+id/rb_shopping"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Shopping"
@@ -223,17 +217,16 @@
                     android:padding="3dp" />
 
                 <RadioButton
-                    android:id="@+id/groceries"
+                    android:id="@+id/rb_groceries"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Groceries"
                     android:textColor="@color/white"
                     android:fontFamily="@font/thin_poppins"
-                    android:padding="3dp"
-                    />
+                    android:padding="3dp" />
 
                 <RadioButton
-                    android:id="@+id/subscription"
+                    android:id="@+id/rb_subscription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Subscription"
@@ -242,17 +235,16 @@
                     android:padding="3dp" />
 
                 <RadioButton
-                    android:id="@+id/investment"
+                    android:id="@+id/rb_investment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Investment"
                     android:textColor="@color/white"
                     android:fontFamily="@font/thin_poppins"
-                    android:padding="3dp"
-                    />
+                    android:padding="3dp" />
 
                 <RadioButton
-                    android:id="@+id/others"
+                    android:id="@+id/rb_others"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Others"
@@ -260,8 +252,8 @@
                     android:fontFamily="@font/thin_poppins"
                     android:padding="3dp" />
 
-
             </RadioGroup>
+
             <TextView
                 android:id="@+id/askAllowanceTV7"
                 android:layout_width="match_parent"
@@ -275,7 +267,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/transactionDesc"
+                android:id="@+id/editTxt_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -294,8 +286,7 @@
                 android:gravity="center_vertical"
                 android:textSize="20dp"
                 android:scrollHorizontally="false"
-                android:singleLine="false"
-                />
+                android:singleLine="false" />
 
             <TextView
                 android:id="@+id/askAllowanceTV8"
@@ -310,7 +301,7 @@
                 android:textSize="20sp" />
 
             <ImageView
-                android:id="@+id/uploadTransactionPic_Button"
+                android:id="@+id/btn_uploadTransaction"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginStart="40dp"
@@ -343,7 +334,7 @@
                 android:layout_gravity="center">
 
                 <TextView
-                    android:id="@+id/location"
+                    android:id="@+id/txtView_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
@@ -361,7 +352,7 @@
                     android:textColorHint="@color/hint"/>
 
                 <ImageButton
-                    android:id="@+id/getLocation_Button"
+                    android:id="@+id/btn_getLocation"
                     android:layout_width="48dp"
                     android:layout_height="55dp"
                     android:layout_alignParentEnd="true"
@@ -374,7 +365,7 @@
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/recordDetails_Button"
+                android:id="@+id/btn_recordDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"

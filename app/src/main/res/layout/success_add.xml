@@ -10,14 +10,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -35,7 +33,6 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/heyNameTV2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -47,7 +44,6 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/textView16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -66,61 +62,58 @@
                 android:background="@drawable/rounded_rect_10">
 
                 <ImageView
-                    android:id="@+id/addSuccess_transactionImage"
+                    android:id="@+id/imgView_transaction"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_centerVertical="true"
                     android:src="@drawable/learnloop_blackbg" />
 
                 <TextView
-                    android:id="@+id/addSuccess_transactionTitle"
+                    android:id="@+id/txtView_transactionTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/addSuccess_transactionImage"
+                    android:layout_toRightOf="@id/imgView_transaction"
                     android:text="Potato Corners"
                     android:textColor="@color/blue"
                     android:textSize="20dp"
                     android:fontFamily="@font/apoppins"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="15dp"
-                    />
+                    android:layout_marginTop="15dp" />
+
                 <TextView
-                    android:id="@+id/addSuccess_transactionType"
+                    android:id="@+id/txtView_transactionType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/addSuccess_transactionImage"
-                    android:layout_below="@id/addSuccess_transactionTitle"
+                    android:layout_toRightOf="@id/imgView_transaction"
+                    android:layout_below="@id/txtView_transactionTitle"
                     android:text="FOOD AND DRINKS"
                     android:textColor="@color/white"
                     android:textSize="15dp"
                     android:textAllCaps="true"
                     android:fontFamily="@font/thin_poppins"
-                    android:layout_marginStart="10dp"
-                    />
+                    android:layout_marginStart="10dp" />
 
                 <TextView
-                    android:id="@+id/addSuccess_transactionAmount"
+                    android:id="@+id/txtView_transactionAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/addSuccess_transactionImage"
-                    android:layout_below="@id/addSuccess_transactionType"
+                    android:layout_toRightOf="@id/imgView_transaction"
+                    android:layout_below="@id/txtView_transactionType"
                     android:text="-$13.20"
                     android:textColor="@color/red"
                     android:textSize="20dp"
                     android:fontFamily="@font/thin_poppins"
                     android:layout_marginStart="10dp"
-                    android:layout_marginBottom="15dp"
-                    />
+                    android:layout_marginBottom="15dp" />
 
             </RelativeLayout>
 
             <pl.droidsonroids.gif.GifImageView
-                android:id="@+id/noice_gif"
+                android:id="@+id/gif_done"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_centerHorizontal="true"
@@ -130,7 +123,6 @@
                 android:src="@raw/success_anim" />
 
             <TextView
-                android:id="@+id/transactionRecordedTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Transaction\nRecorded"
@@ -140,6 +132,7 @@
                 android:gravity="center"/>
 
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

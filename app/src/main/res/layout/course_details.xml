@@ -20,7 +20,6 @@
             android:layout_marginBottom="80dp"
             android:orientation="vertical" >
 
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -35,7 +34,7 @@
                     app:srcCompat="@drawable/learnloop_icon" />
 
                 <TextView
-                    android:id="@+id/course_BackButton"
+                    android:id="@+id/txtView_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -49,7 +48,7 @@
             </RelativeLayout>
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/imgView_course"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_rect_10_white"
@@ -63,7 +62,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/welcomeLoopMsg"
+                    android:id="@+id/txtView_courseTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -73,7 +72,7 @@
                     android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/textView20"
+                    android:id="@+id/txtView_courseStats"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/thin_poppins"
@@ -82,39 +81,38 @@
                     android:textSize="10dp" />
 
                 <RelativeLayout
-                    android:id="@+id/course1_hoster"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@id/textView21"
                     android:layout_marginTop="5dp">
 
                     <ImageView
-                        android:id="@+id/imageView1"
+                        android:id="@+id/imgView_courseAttendee"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_centerVertical="true"
                         android:src="@drawable/sing_pfp" />
 
                     <TextView
-                        android:id="@+id/textView29"
+                        android:id="@+id/txtView_courseAttendee"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="15dp"
-                        android:layout_toRightOf="@id/imageView1"
+                        android:layout_toRightOf="@id/imgView_courseAttendee"
                         android:fontFamily="@font/thin_poppins"
                         android:text="@string/course1_lecturer"
                         android:textColor="@color/white"
                         android:textSize="12dp" />
 
                     <TextView
-                        android:id="@+id/TextView41"
+                        android:id="@+id/txtView_attendeeDetail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/textView29"
+                        android:layout_below="@id/txtView_courseAttendee"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="15dp"
-                        android:layout_toRightOf="@id/imageView1"
+                        android:layout_toRightOf="@id/imgView_courseAttendee"
                         android:fontFamily="@font/thin_poppins"
                         android:text="@string/course1_lecturerpos"
                         android:textColor="@color/hint"
@@ -123,7 +121,7 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/textView34"
+                    android:id="@+id/txtView_lessonsProgress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -133,39 +131,38 @@
                     android:textSize="13dp" />
 
                 <RelativeLayout
-                    android:id="@+id/hoster"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/textView17"
                     android:layout_marginTop="10dp">
 
                     <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/imgView_courseHost"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:src="@drawable/smu_logo" />
 
                     <TextView
-                        android:id="@+id/textView18"
+                        android:id="@+id/txtView_courseHost"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="15dp"
-                        android:layout_toRightOf="@id/imageView6"
+                        android:layout_toRightOf="@id/imgView_courseHost"
                         android:fontFamily="@font/thin_poppins"
                         android:text="@string/smu_name"
                         android:textColor="@color/white"
                         android:textSize="12dp" />
 
                     <TextView
-                        android:id="@+id/textView19"
+                        android:id="@+id/txtView_hostDesc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/textView18"
+                        android:layout_below="@id/txtView_courseHost"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="15dp"
-                        android:layout_toRightOf="@id/imageView6"
+                        android:layout_toRightOf="@id/imgView_courseHost"
                         android:fontFamily="@font/thin_poppins"
                         android:text="@string/smu_subname"
                         android:textColor="@color/hint"
@@ -181,13 +178,12 @@
                     android:padding="5dp">
 
                     <ImageView
-                        android:id="@+id/playIcon"
+                        android:id="@+id/imgView_play"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:src="@drawable/ic_baseline_play_circle_24"
-                        android:layout_centerVertical="true"
-                        />
+                        android:layout_centerVertical="true" />
 
                     <TextView
                         android:id="@+id/textView35"
@@ -196,7 +192,7 @@
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
-                        android:layout_toRightOf="@id/playIcon"
+                        android:layout_toRightOf="@id/imgView_play"
                         android:fontFamily="@font/thin_poppins"
                         android:text="Making the plan"
                         android:textColor="@color/black"
@@ -210,7 +206,7 @@
                         android:layout_marginEnd="5dp"
                         android:layout_marginStart="15dp"
                         android:layout_marginBottom="5dp"
-                        android:layout_toRightOf="@id/playIcon"
+                        android:layout_toRightOf="@id/imgView_play"
                         android:fontFamily="@font/thin_poppins"
                         android:text="5 Min 12 Sec"
                         android:textColor="@color/hint"
@@ -319,7 +315,7 @@
                     android:background="@drawable/rounded_rect_10">
 
                     <TextView
-                        android:id="@+id/textView30"
+                        android:id="@+id/txtView_courseDesc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/thin_poppins"
@@ -329,10 +325,10 @@
                         android:textSize="15dp" />
 
                     <TextView
-                        android:id="@+id/textView31"
+                        android:id="@+id/txtView_seeMore"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/textView30"
+                        android:layout_below="@id/txtView_courseDesc"
                         android:layout_marginBottom="10dp"
                         android:fontFamily="@font/thin_poppins"
                         android:gravity="center"
@@ -342,7 +338,7 @@
                 </RelativeLayout>
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/courseResources"
+                    android:id="@+id/btn_seeResource"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"

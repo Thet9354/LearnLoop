@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black_background"
-    tools:context=".Onboarding.AskInformationActivity"
-    >
+    android:orientation="vertical"
+    tools:context=".Onboarding.AskInformationActivity">
 
     <RelativeLayout
-        android:id="@+id/logo"
+        android:id="@+id/rel_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp">
 
         <ImageView
-            android:id="@+id/learnloop_icon"
+            android:id="@+id/imgView_learnLoop"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
@@ -26,14 +26,14 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/learnloop_icon"
+            android:layout_below="@id/imgView_learnLoop"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat_med"
             android:gravity="center"
-            android:layout_marginTop="10dp"
             android:text="L E A R N L O O P"
+            android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -45,11 +45,11 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/heyNameTV"
+                android:id="@+id/txtView_userName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -61,30 +61,28 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/TextView1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="We want to know more about you!"
-                android:textSize="15dp"
-                android:textColor="@color/hint"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp"
-                android:fontFamily="@font/apoppins"/>
+                android:fontFamily="@font/apoppins"
+                android:text="We want to know more about you!"
+                android:textColor="@color/hint"
+                android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/askAllowanceTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
                 android:fontFamily="@font/apoppins"
                 android:text="What's your allowance?"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/allowance"
+                android:id="@+id/editTxt_allowance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -92,61 +90,63 @@
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/rounded_rect_10"
+                android:drawableLeft="@drawable/ic_baseline_account_balance_wallet_24"
                 android:drawablePadding="20dp"
                 android:ems="10"
                 android:fontFamily="@font/thin_poppins"
                 android:gravity="center_vertical"
+                android:digits="0123456789"
+                android:text=""
                 android:hint="Number only (eg. 100)"
-                android:drawableLeft="@drawable/ic_baseline_account_balance_wallet_24"
                 android:inputType="number"
                 android:padding="15dp"
+                android:cursorVisible="false"
                 android:textColor="@color/white"
                 android:textColorHint="@color/hint"
                 android:textSize="20sp" />
 
             <RadioGroup
-                android:id="@+id/allowanceType"
+                android:id="@+id/rg_allowanceType"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp">
 
                 <RadioButton
-                    android:id="@+id/dailyAllowance"
+                    android:id="@+id/rb_dailyAllowance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Daily"
                     android:layout_marginStart="5dp"
-                    android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:fontFamily="@font/thin_poppins"
                     android:padding="3dp"
-                    android:fontFamily="@font/thin_poppins"/>
+                    android:text="Daily"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
 
                 <RadioButton
-                    android:id="@+id/weeklyAllowance"
+                    android:id="@+id/rb_weeklyAllowance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
+                    android:fontFamily="@font/thin_poppins"
+                    android:padding="3dp"
                     android:text="Weekly"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
-                    android:padding="3dp"
-                    android:fontFamily="@font/thin_poppins"/>
+                    android:textSize="15dp" />
 
                 <RadioButton
-                    android:id="@+id/monthlyAllowance"
+                    android:id="@+id/rb_monthlyAllowance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
+                    android:fontFamily="@font/thin_poppins"
+                    android:padding="3dp"
                     android:text="Monthly"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
-                    android:padding="3dp"
-                    android:fontFamily="@font/thin_poppins"/>
+                    android:textSize="15dp" />
             </RadioGroup>
 
             <TextView
-                android:id="@+id/askBudgetTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -161,16 +161,16 @@
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="(in a Monthly Timeframe)"
-                android:textSize="15dp"
-                android:textColor="@color/hint"
-                android:textStyle="italic"
-                android:fontFamily="@font/thin_poppins"
                 android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"/>
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/thin_poppins"
+                android:text="(in a Monthly Timeframe)"
+                android:textColor="@color/hint"
+                android:textSize="15dp"
+                android:textStyle="italic" />
 
             <EditText
-                android:id="@+id/budget"
+                android:id="@+id/editTxt_budgetGoal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -184,17 +184,24 @@
                 android:fontFamily="@font/thin_poppins"
                 android:gravity="center_vertical"
                 android:hint="Number only (eg. 100)"
-                android:inputType="textEmailAddress"
+                android:inputType="number"
+                android:digits="0123456789"
+                android:text=""
                 android:padding="15dp"
+                android:cursorVisible="false"
                 android:textColor="@color/white"
                 android:textColorHint="@color/hint"
                 android:textSize="20sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/completeRegister_Button"
+            <Button
+                android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/blue"
                 android:fontFamily="@font/thin_poppins"
                 android:padding="10dp"
@@ -202,12 +209,9 @@
                 android:textAllCaps="false"
                 android:textSize="20sp"
                 app:cornerRadius="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                />
+                app:layout_constraintBottom_toBottomOf="parent" />
         </LinearLayout>
+
     </ScrollView>
-</RelativeLayout>
+
+</LinearLayout>

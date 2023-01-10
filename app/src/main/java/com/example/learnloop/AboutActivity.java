@@ -13,7 +13,7 @@ import org.w3c.dom.Text;
 
 public class AboutActivity extends AppCompatActivity {
 
-    private TextView backToHome_Button;
+    private TextView txtView_getStarted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +21,26 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.about);
         getSupportActionBar().hide();
 
-        backToHome_Button = findViewById(R.id.backToHome_Button);
+        initWidget();
 
-        backToHome_Button.setOnClickListener(new View.OnClickListener() {
+        pageDirectories();
+
+    }
+
+    private void pageDirectories() {
+
+        txtView_getStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AboutActivity.this, MainFragment.class);
                 startActivity(intent);
             }
         });
+    }
+
+    private void initWidget() {
+
+        // TextView
+        txtView_getStarted = findViewById(R.id.txtView_getStarted);
     }
 }

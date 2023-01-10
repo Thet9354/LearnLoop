@@ -216,10 +216,10 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/backToHome_Button"
+                android:id="@+id/txtView_getStarted"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Back to Home"
+                android:text="Get Started"
                 android:textColor="@color/blue"
                 android:textSize="15dp"
                 android:fontFamily="@font/thin_poppins"

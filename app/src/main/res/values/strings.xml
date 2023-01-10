@@ -3,6 +3,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="facebook_app_id">496379855971971</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">56789</string>
+
     <string name="app_description1">The app aims to promote the genuine adoption of financial literacy knowledge taught in schools during Education &amp; Career Guidance modules.</string>
     <string name="app_description2">Even though students are exposed to basic financial literacy concepts such as “Budgeting”, youths do not put it into practice as the modules only provide theoretical knowledge, not practical knowledge.</string>
     <string name="app_description3">LearnLoop aims to provide the practical knowledge aspect through features such as:\n ⚪ Setting Budgets\n ⚪ Budgeting\n ⚪ Expenditure Tracker\n ⚪ Financial Literacy Courses\n ⚪ Student Discount Library</string>
