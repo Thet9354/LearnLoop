@@ -24,6 +24,27 @@
 
     <string name="budgeting_principles_desc">Making a budgeting plan is one thing. Sticking to it is another.\n\nThis course focuses on refreshing your budgeting knowledge acquired from school such as concepts, plans, identifying and classification of expenditures and more.\n\nThis course will also guide you on building a sustainable budgeting plan and share tips on how one can stick to the plan in the long r...</string>
 
+    <string-array name="transaction_title">
+        <item name="Potato">Potato Corners</item>
+        <item name="Payback">Pay back to Thet Pine</item>
+        <item name="BlackPanther">Black Panther Movie</item>
+        <item name="Yakiniku">Yakiniku Return</item>
+    </string-array>
+
+    <string-array name="transaction_purpose">
+        <item name="foodndrinks">FOOD AND DRINKS</item>
+        <item name="transfer">BANK TRANSFER</item>
+        <item name="ENTERTAINMENT">ENTERTAINMENT</item>
+        <item name="transfer">BANK TRANSFER</item>
+    </string-array>
+
+    <string-array name="transaction_amount">
+        <item name="-13.20">-$13.20</item>
+        <item name="-4.50">-$4.50</item>
+        <item name="-$8.50">-$8.50</item>
+        <item name="+$12.90">+$12.90</item>
+    </string-array>
+
 </resources>
 
     <!--    Even though students are exposed to basic financial literacy concepts such as “Budgeting”, youths do not put it into practice as the modules only provide theoretical knowledge, not practical knowledge.-->
