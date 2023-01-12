@@ -19,9 +19,14 @@ public class CourseDetailsActivity extends AppCompatActivity {
             txtView_attendeeDetail, txtView_lessonsProgress, txtView_courseHost, txtView_hostDesc,
             txtView_courseDesc, txtView_seeMore;
 
-    private ImageView imgView_course;
+    private ImageView imgView_course, imgView_courseAttendee;
 
     private MaterialButton btn_seeResource;
+
+    private String courseTitle, hostName, hostDesc, courseDuration, courseLesson, courseDesc, courseUniversity, universityDesc, publishedDates;
+    private int img_course, img_host;
+
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +34,33 @@ public class CourseDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.course_details);
         getSupportActionBar().hide();
 
+        intent = getIntent();
+
         initWidget();
 
-        initUI();
+        getIntentData();
 
         pageDirectories();
+
+    }
+
+    private void getIntentData() {
+
+        courseTitle = intent.getStringExtra("Course Title");
+        hostName = intent.getStringExtra("Host Name");
+        hostDesc = intent.getStringExtra("Host Desc");
+        courseDuration = intent.getStringExtra("Course Duration");
+        courseLesson = intent.getStringExtra("Course Lessons");
+
+        courseDesc = intent.getStringExtra("Course Desc");
+        courseUniversity = intent.getStringExtra("Course University");
+        universityDesc = intent.getStringExtra("University Desc");
+        publishedDates = intent.getStringExtra("Published Dates");
+
+        img_course = intent.getIntExtra("Course Image", 0);
+        img_host = intent.getIntExtra("Host Image", 0);
+
+        initUI();
 
     }
 
@@ -51,14 +78,25 @@ public class CourseDetailsActivity extends AppCompatActivity {
         txtView_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CourseDetailsActivity.this, LoopraryFragment.class);
-                startActivity(intent);
-                finish();
+                onBackPressed();
             }
         });
     }
 
     private void initUI() {
+
+        txtView_courseTitle.setText(courseTitle);
+        txtView_courseAttendee.setText(hostName);
+        txtView_attendeeDetail.setText(hostDesc);
+        txtView_lessonsProgress.setText("Remaining: " + courseLesson);
+
+        txtView_courseStats.setText("58,320 views - " + publishedDates);
+        txtView_courseHost.setText(courseUniversity);
+        txtView_hostDesc.setText(universityDesc);
+        txtView_courseDesc.setText(courseDesc);
+
+        imgView_course.setImageResource(img_course);
+        imgView_courseAttendee.setImageResource(img_host);
 
     }
 
@@ -78,6 +116,7 @@ public class CourseDetailsActivity extends AppCompatActivity {
 
         //Imageview
         imgView_course = findViewById(R.id.imgView_course);
+        imgView_courseAttendee = findViewById(R.id.imgView_courseAttendee);
 
         //Button
         btn_seeResource = findViewById(R.id.btn_seeResource);

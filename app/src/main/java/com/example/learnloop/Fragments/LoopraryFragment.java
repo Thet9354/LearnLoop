@@ -44,6 +44,14 @@ public class LoopraryFragment extends Fragment {
             R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101,
             R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101};
 
+    int[] hostPic = {R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101,
+            R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101,
+            R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101};
+
+    int[] universityPic = {R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101,
+            R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101,
+            R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101};
+
     private static final String[] COURSENAME = new String[]{
             "Investment 101",
             "Cryptocurrency",
@@ -52,7 +60,6 @@ public class LoopraryFragment extends Fragment {
             "Inflation and its Impacts",
             "Recession and its Impacts"
     };
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -210,6 +217,11 @@ public class LoopraryFragment extends Fragment {
                 String[] courseDuration = getResources().getStringArray(R.array.course_duration);
                 String[] courseLesson = getResources().getStringArray(R.array.course_lesson);
 
+                String[] courseDesc = getResources().getStringArray(R.array.course_desc);
+                String[] courseUniversity = getResources().getStringArray(R.array.course_university);
+                String[] courseUniversityDesc = getResources().getStringArray(R.array.course_universityDesc);
+                String[] coursePublishedDate = getResources().getStringArray(R.array.course_publishedDates);
+
 
 
                 for (int i = 0 ; i < courseTitle.length; i++)
@@ -222,6 +234,11 @@ public class LoopraryFragment extends Fragment {
                     courses.setHostDesc(hostDesc[i]);
                     courses.setCourseDuration(courseDuration[i]);
                     courses.setCourseLessons(courseLesson[i]);
+
+                    courses.setCourseDesc(courseDesc[i]);
+                    courses.setCourseUniversity(courseUniversity[i]);
+                    courses.setCourseUniversityDesc(courseUniversityDesc[i]);
+                    courses.setCoursePublishedDate(coursePublishedDate[i]);
 
                     coursesArrayList.add(courses);
                     courses = null;

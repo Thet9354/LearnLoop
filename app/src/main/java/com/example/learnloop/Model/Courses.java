@@ -12,8 +12,13 @@ public class Courses {
 
     private String courseDuration;
     private String courseLessons;
+    private String courseDesc;
+    private String courseUniversity;
+    private String courseUniversityDesc;
+    private String coursePublishedDate;
 
-    public Courses(int id, int courseImage, int hostImage, String courseTitle, String hostName, String hostDesc, String courseDuration, String courseLessons) {
+
+    public Courses(int id, int courseImage, int hostImage, String courseTitle, String hostName, String hostDesc, String courseDuration, String courseLessons, String courseDesc, String courseUniversity, String courseUniversityDesc, String coursePublishedDate) {
         this.id = id;
         this.courseImage = courseImage;
         this.hostImage = hostImage;
@@ -22,6 +27,10 @@ public class Courses {
         this.hostDesc = hostDesc;
         this.courseDuration = courseDuration;
         this.courseLessons = courseLessons;
+        this.courseDesc = courseDesc;
+        this.courseUniversity = courseUniversity;
+        this.courseUniversityDesc = courseUniversityDesc;
+        this.coursePublishedDate = coursePublishedDate;
     }
 
     public Courses() {
@@ -90,5 +99,37 @@ public class Courses {
 
     public void setCourseLessons(String courseLessons) {
         this.courseLessons = courseLessons;
+    }
+
+    public String getCourseDesc() {
+        return courseDesc;
+    }
+
+    public void setCourseDesc(String courseDesc) {
+        this.courseDesc = courseDesc;
+    }
+
+    public String getCourseUniversity() {
+        return courseUniversity;
+    }
+
+    public void setCourseUniversity(String courseUniversity) {
+        this.courseUniversity = courseUniversity;
+    }
+
+    public String getCourseUniversityDesc() {
+        return courseUniversityDesc;
+    }
+
+    public void setCourseUniversityDesc(String courseUniversityDesc) {
+        this.courseUniversityDesc = courseUniversityDesc;
+    }
+
+    public String getCoursePublishedDate() {
+        return coursePublishedDate;
+    }
+
+    public void setCoursePublishedDate(String coursePublishedDate) {
+        this.coursePublishedDate = coursePublishedDate;
     }
 }

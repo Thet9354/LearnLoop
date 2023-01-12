@@ -1,6 +1,7 @@
 package com.example.learnloop.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.learnloop.Looprary.CourseDetailsActivity;
 import com.example.learnloop.Model.Courses;
 import com.example.learnloop.Model.Transaction;
 import com.example.learnloop.R;
@@ -67,6 +69,30 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CardViewHo
 
         holder.imgView_course.setImageResource(coursesArrayList.get(position).getCourseImage());
         holder.imgView_host.setImageResource(coursesArrayList.get(position).getHostImage());
+
+        holder.cv_course.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, CourseDetailsActivity.class);
+                int pos = holder.getAdapterPosition();
+                intent.putExtra("Course Title", coursesArrayList.get(pos).getCourseTitle());
+                intent.putExtra("Host Name", coursesArrayList.get(pos).getHostName());
+                intent.putExtra("Host Desc", coursesArrayList.get(pos).getHostDesc());
+                intent.putExtra("Course Duration", coursesArrayList.get(pos).getCourseDuration());
+                intent.putExtra("Course Lessons", coursesArrayList.get(pos).getCourseLessons());
+
+                intent.putExtra("Course Desc", coursesArrayList.get(pos).getCourseDesc());
+                intent.putExtra("Course University", coursesArrayList.get(pos).getCourseUniversity());
+                intent.putExtra("University Desc", coursesArrayList.get(pos).getCourseUniversityDesc());
+                intent.putExtra("Published Dates", coursesArrayList.get(pos).getCoursePublishedDate());
+
+                intent.putExtra("Course Image", coursesArrayList.get(pos).getCourseImage());
+                intent.putExtra("Host Image", coursesArrayList.get(pos).getHostImage());
+
+                mContext.startActivity(intent);
+
+            }
+        });
     }
 
     @Override

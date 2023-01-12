@@ -49,8 +49,9 @@
 
             <ImageView
                 android:id="@+id/imgView_course"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:background="@drawable/rounded_rect_10_white"
                 android:src="@drawable/budgeting_principles_open" />
 
