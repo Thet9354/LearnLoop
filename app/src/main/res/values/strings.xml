@@ -45,6 +45,99 @@
         <item name="+$12.90">+$12.90</item>
     </string-array>
 
+    <string-array name="event_title">
+        <item name="Citi Foundation-SMU Financial Literacy Program for Young Adults">Citi Foundation-SMU Financial Literacy Program for Young Adults</item>
+        <item name="-4.50">-$4.50</item>
+        <item name="-$8.50">-$8.50</item>
+        <item name="+$12.90">+$12.90</item>
+    </string-array>
+
+    <string-array name="event_host">
+        <item name="Citi Foundation-SMU Financial Literacy Program for Young Adults">Citi Foundation-SMU Financial Literacy Program for Young Adults</item>
+        <item name="-4.50">-$4.50</item>
+        <item name="-$8.50">-$8.50</item>
+        <item name="+$12.90">+$12.90</item>
+    </string-array>
+
+    <string-array name="host_desc">
+        <item name="Citi Foundation-SMU Financial Literacy Program for Young Adults">Citi Foundation-SMU Financial Literacy Program for Young Adults</item>
+        <item name="-4.50">-$4.50</item>
+        <item name="-$8.50">-$8.50</item>
+        <item name="+$12.90">+$12.90</item>
+    </string-array>
+
+    <string-array name="event_participants">
+        <item name="Citi Foundation-SMU Financial Literacy Program for Young Adults">Citi Foundation-SMU Financial Literacy Program for Young Adults</item>
+        <item name="-4.50">-$4.50</item>
+        <item name="-$8.50">-$8.50</item>
+        <item name="+$12.90">+$12.90</item>
+    </string-array>
+
+    <string-array name="course_title">
+        <item name="Financial Market">Introduction to Financial Markets</item>
+        <item name="Introduction to Finance and Accounting">Introduction to Finance and Accounting</item>
+        <item name="Investment and Portfolio Management">Investment and Portfolio Management</item>
+        <item name="Finance &amp; Quantitative Modelling for Analysts">Finance &amp; Quantitatie Modelling for Analysts</item>
+        <item name="Finance for Non-Finance Professionals">Finance for Non-Finance Professionals</item>
+        <item name="Behavioral Finance">Behavioral Finance</item>
+        <item name="Business and Financial Modelling">Business and Financial Modelling</item>
+        <item name="Fundamentals of Finance">Fundamentals of Finance</item>
+        <item name="Python and Statistic for Financial Analysis">Python and Statistic for Financial Analysis</item>
+        <item name="Cost Accounting">Cost Accounting</item>
+    </string-array>
+
+    <string-array name="course_host">
+        <item name="Financial Market">Robert Shiller</item>
+        <item name="Introduction to Finance and Accounting">Brian J Bushee</item>
+        <item name="Investment and Portfolio Management">Arzu Ozoguz</item>
+        <item name="Finance &amp; Quantitative Modelling for Analysts">Michael R Roberts</item>
+        <item name="Finance for Non-Finance Professionals">James Weston</item>
+        <item name="Behavioral Finance">Emma Rasiel</item>
+        <item name="Business and Financial Modelling">Sergei Savin</item>
+        <item name="Fundamentals of Finance">Marla Noel</item>
+        <item name="Python and Statistic for Financial Analysis">Xuhu Wan</item>
+        <item name="Cost Accounting">Gunther Friedl</item>
+    </string-array>
+
+    <string-array name="courseHost_Desc">
+        <item name="Financial Market">Professor of Economics, Yale University</item>
+        <item name="Introduction to Finance and Accounting">The Geoffrey T. Boisi Professor</item>
+        <item name="Investment and Portfolio Management">Finance Faculty</item>
+        <item name="Finance &amp; Quantitative Modelling for Analysts">Professor of Finance, University of Pennsylvania</item>
+        <item name="Finance for Non-Finance Professionals">Harmon Whittington Professor of Finance</item>
+        <item name="Behavioral Finance">Associate Chair and Professor</item>
+        <item name="Business and Financial Modelling">Associate Professor of Operations, Information and Decisions</item>
+        <item name="Fundamentals of Finance">UCI Division of Continuing Education Instructor</item>
+        <item name="Python and Statistic for Financial Analysis">Associate Professor</item>
+        <item name="Cost Accounting">Prof. Dr.</item>
+    </string-array>
+
+    <string-array name="course_duration">
+        <item name="Financial Market">34 hours</item>
+        <item name="Introduction to Finance and Accounting">5 months</item>
+        <item name="Investment and Portfolio Management">6 months</item>
+        <item name="Finance &amp; Quantitative Modelling for Analysts">4 months</item>
+        <item name="Finance for Non-Finance Professionals">14 hours</item>
+        <item name="Behavioral Finance">5 hours</item>
+        <item name="Business and Financial Modelling">6 months</item>
+        <item name="Fundamentals of Finance">10 hours</item>
+        <item name="Python and Statistic for Financial Analysis">13 hours</item>
+        <item name="Cost Accounting">3 months</item>
+    </string-array>
+
+    <string-array name="course_lesson">
+        <item name="Financial Market">7 modules</item>
+        <item name="Introduction to Finance and Accounting">4 courses</item>
+        <item name="Investment and Portfolio Management">5 courses</item>
+        <item name="Finance &amp; Quantitative Modelling for Analysts">4 courses</item>
+        <item name="Finance for Non-Finance Professionals">5 modules</item>
+        <item name="Behavioral Finance">3 modules</item>
+        <item name="Business and Financial Modelling">5 courses</item>
+        <item name="Fundamentals of Finance">4 modules</item>
+        <item name="Python and Statistic for Financial Analysis">4 modules</item>
+        <item name="Cost Accounting">3 courses</item>
+    </string-array>
+
 </resources>
 
     <!--    Even though students are exposed to basic financial literacy concepts such as “Budgeting”, youths do not put it into practice as the modules only provide theoretical knowledge, not practical knowledge.-->

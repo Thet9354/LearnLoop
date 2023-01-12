@@ -149,7 +149,7 @@ public class AddTransactionFragment extends Fragment {
 
     private void validateInput() {
 
-        if (!validateTransactionFlow() | !validateTitle() | !validateAmount() | !validatePurpose() | !validateDescription() | validatePic() | !validateLocation())
+        if (!validateTransactionFlow() | !validateTitle() | !validateAmount() | !validatePurpose() | !validateDescription() | !validatePic() | !validateLocation())
         {
             return;
         }
@@ -158,14 +158,20 @@ public class AddTransactionFragment extends Fragment {
             //TODO: Allow transaction and save it to firebase
             Toast.makeText(mContext, "Transaction added", Toast.LENGTH_SHORT).show();
 
-            FragmentManager fragmentManager = getFragmentManager();
+            Intent intent = new Intent(mContext, SuccessAddActivty.class);
+            intent.putExtra("Transaction Title", mTitle);
+            intent.putExtra("Transaction Purpose", mPurpose);
+            intent.putExtra("Transaction Amount", mAmount);
+            getActivity().startActivity(intent);
 
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            MainFragment mainFragment = new MainFragment();
-            fragmentTransaction.replace(R.id.bottom_nav_main, mainFragment);
-
-            fragmentTransaction.commit();
+//            FragmentManager fragmentManager = getFragmentManager();
+//
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//
+//            MainFragment mainFragment = new MainFragment();
+//            fragmentTransaction.replace(R.id.bottom_nav_main, mainFragment);
+//
+//            fragmentTransaction.commit();
         }
     }
 

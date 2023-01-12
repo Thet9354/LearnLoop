@@ -16,17 +16,32 @@ public class SuccessAddActivty extends AppCompatActivity {
 
     private pl.droidsonroids.gif.GifImageView gif_done;
 
+    private Intent intent;
+
+    private String mTitle, mPurpose, mAmount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.success_add);
         getSupportActionBar().hide();
 
+        intent = getIntent();
+
         initWidget();
+
+        getIntentData();
 
         initUI();
 
         pageDirectories();
+    }
+
+    private void getIntentData() {
+
+        mTitle = intent.getStringExtra("Transaction Title");
+        mPurpose = intent.getStringExtra("Transaction Purpose");
+        mAmount = intent.getStringExtra("Transaction Amount");
     }
 
     private void pageDirectories() {
@@ -44,6 +59,9 @@ public class SuccessAddActivty extends AppCompatActivity {
 
     private void initUI() {
 
+        txtView_transactionTitle.setText(mTitle);
+        txtView_transactionType.setText(mPurpose);
+        txtView_transactionAmount.setText(mAmount);
     }
 
     private void initWidget() {

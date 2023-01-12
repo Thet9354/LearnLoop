@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.learnloop.AboutActivity;
+import com.example.learnloop.AboutUs_Activity;
 import com.example.learnloop.Adapter.RecentTransactionAdapter;
 import com.example.learnloop.MainActivity;
 import com.example.learnloop.Model.Transaction;
@@ -84,6 +85,18 @@ public class MainFragment extends Fragment {
         cv_cardWallet = v.findViewById(R.id.cv_cardWallet);
 
         initUI();
+
+        pageDirectories();
+    }
+
+    private void pageDirectories() {
+
+        btn_about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(mContext, AboutUs_Activity.class));
+            }
+        });
     }
 
     private void initUI() {
