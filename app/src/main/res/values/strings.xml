@@ -46,10 +46,16 @@
     </string-array>
 
     <string-array name="event_title">
-        <item name="Citi Foundation-SMU Financial Literacy Program for Young Adults">Citi Foundation-SMU Financial Literacy Program for Young Adults</item>
-        <item name="-4.50">-$4.50</item>
-        <item name="-$8.50">-$8.50</item>
-        <item name="+$12.90">+$12.90</item>
+        <item name="Financial Market">20 December 2022</item>
+        <item name="Introduction to Finance and Accounting">21 December 2022</item>
+        <item name="Investment and Portfolio Management">22 December 2022</item>
+        <item name="Finance &amp; Quantitative Modelling for Analysts">23 December 2022</item>
+        <item name="Finance for Non-Finance Professionals">24 December 2022</item>
+        <item name="Behavioral Finance">25 December 2022</item>
+        <item name="Business and Financial Modelling">26 December 2022</item>
+        <item name="Fundamentals of Finance">27 December 2022</item>
+        <item name="Python and Statistic for Financial Analysis">28 December 2022</item>
+        <item name="Cost Accounting">29 December 2022</item>
     </string-array>
 
     <string-array name="event_host">
@@ -189,6 +195,8 @@
         <item name="Python and Statistic for Financial Analysis">28 December 2022</item>
         <item name="Cost Accounting">29 December 2022</item>
     </string-array>
+
+
 
 
 </resources>

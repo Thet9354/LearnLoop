@@ -105,7 +105,7 @@ public class LoopraryFragment extends Fragment {
 
         //for better performance of recyclerview.
 
-        int spaceInPixels = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
+        int spaceInPixels = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1, getResources().getDisplayMetrics());
         rv_course.addItemDecoration(new SpaceItemDecoration(spaceInPixels));
 
         rv_course.setHasFixedSize(true);
@@ -131,6 +131,9 @@ public class LoopraryFragment extends Fragment {
     private void initEventRecView() {
 
         //for better performance of recyclerview.
+
+        int spaceInPixels = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
+        rv_course.addItemDecoration(new SpaceItemDecoration(spaceInPixels));
 
         rv_events.setHasFixedSize(true);
 
@@ -172,6 +175,7 @@ public class LoopraryFragment extends Fragment {
                 for (int i = 0 ; i < transactionTitle.length; i++)
                 {
                     events = new Events();
+
 //                    events.setTransactionPic(transactionPic[i]);
 //                    events.setTitle(transactionTitle[i]);
 //                    events.setPurpose(transactionPurpose[i]);
