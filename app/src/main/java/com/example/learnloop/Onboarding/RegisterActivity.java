@@ -137,7 +137,6 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(RegisterActivity.this, AskInformationActivity.class);
                 startActivity(intent);
-                //TODO: Use instagram in authentication from firebase
             }
         });
 
@@ -147,7 +146,6 @@ public class RegisterActivity extends AppCompatActivity {
 
                 LoginManager.getInstance().logInWithReadPermissions(RegisterActivity.this, Arrays.asList("email"));
 
-                //TODO: Use facebook in authentication from firebase
 
             }
         });
