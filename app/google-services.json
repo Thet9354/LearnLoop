@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "659156012640",
+    "project_id": "learnloop-1673224439925",
+    "storage_bucket": "learnloop-1673224439925.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659156012640:android:3203c1fa41a5883a08fd05",
+        "android_client_info": {
+          "package_name": "com.example.learnloop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659156012640-8e5vm58r4epltpoe7uph6gblnbli30kh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.learnloop",
+            "certificate_hash": "ff8d426a498a0e686c9e5033f00df286a52d4635"
+          }
+        },
+        {
+          "client_id": "659156012640-8o7haa9sah8nuoh5tra74gruikjvgiei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiJG5m7e5yMFNxYLddLxpEdCE9hI4Kl_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "659156012640-8o7haa9sah8nuoh5tra74gruikjvgiei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
