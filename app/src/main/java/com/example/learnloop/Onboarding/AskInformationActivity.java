@@ -34,8 +34,9 @@ public class AskInformationActivity extends AppCompatActivity {
     Intent intent;
 
     //String to store input data
-    private String mName, mEmail, mPassword;
+    private String mName, mPhoneNumber, mEmail, mPassword;
     private String mAllowance, allowanceType, budgetGoal;
+    private String expenditure = "0";
 
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://learnloop-1673224439925-default-rtdb.asia-southeast1.firebasedatabase.app/");
     DatabaseReference databaseReference  = database.getReference().child("users");
@@ -58,6 +59,7 @@ public class AskInformationActivity extends AppCompatActivity {
     private void getTransferredData() {
 
         mName = intent.getStringExtra("Name");
+        mPhoneNumber = intent.getStringExtra("Phone Number");
         mEmail = intent.getStringExtra("Email");
         mPassword = intent.getStringExtra("Password");
 
@@ -122,7 +124,7 @@ public class AskInformationActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 //Checking if phone number is not registered before
 
-                if (snapshot.hasChild(mName))
+                if (snapshot.hasChild(mPhoneNumber))
                 {
                     //--->Asking user if he/she wants ti log in to existing account
                     AlertDialog.Builder builder = new AlertDialog.Builder(AskInformationActivity.this);
@@ -144,22 +146,26 @@ public class AskInformationActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    System.out.println("Aight");
                     //--->Adding user's personal information to firebase
-                    databaseReference.child(mName).child("User's Information").child("Full Name").setValue(mName);
-                    databaseReference.child(mName).child("User's Information").child("Email").setValue(mEmail);
-                    databaseReference.child(mName).child("User's Information").child("Password").setValue(mPassword);
+                    databaseReference.child(mPhoneNumber).child("User's Information").child("Full Name").setValue(mName);
+                    databaseReference.child(mPhoneNumber).child("User's Information").child("Phone Number").setValue(mPhoneNumber);
+                    databaseReference.child(mPhoneNumber).child("User's Information").child("Email").setValue(mEmail);
+                    databaseReference.child(mPhoneNumber).child("User's Information").child("Password").setValue(mPassword);
 
-                    databaseReference.child(mName).child("User's Information").child("Allowance").setValue(mAllowance);
-                    databaseReference.child(mName).child("User's Information").child("Allowance Type").setValue(allowanceType);
-                    databaseReference.child(mName).child("User's Information").child("Budget Goal").setValue(budgetGoal);
+                    databaseReference.child(mPhoneNumber).child("User's Information").child("Allowance").setValue(mAllowance);
+                    databaseReference.child(mPhoneNumber).child("User's Information").child("Allowance Type").setValue(allowanceType);
+                    databaseReference.child(mPhoneNumber).child("User's Information").child("Budget Goal").setValue(budgetGoal);
+                    databaseReference.child(mPhoneNumber).child("User's Information").child("Expenditure").setValue(expenditure);
+
 
                     Toast.makeText(AskInformationActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("Name", mName);
+                    intent.putExtra("Phone Number", mPhoneNumber);
                     intent.putExtra("Email", mEmail);
                     intent.putExtra("Password", mPassword);
+                    startActivity(intent);
                 }
             }
 

@@ -1,6 +1,9 @@
 package com.example.learnloop.Onboarding;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -13,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.learnloop.Fragments.MainFragment;
 import com.example.learnloop.MainActivity;
@@ -32,22 +36,28 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.concurrent.Executor;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
 
     private TextView txtView_register;
-    private EditText editTxt_loginEmail, editTxt_loginPassword;
+    private EditText editTxt_loginEmail, editTxt_loginPassword, editTxt_phoneNumber;
     private ImageView btn_google, btn_instagram, btn_facebook;
-    private Button btn_login;
+    private Button btn_login, btn_biometricLogin;
 
     //Variable to store inputs
-    private String mEmail, mPassword, mName;
+    private String mEmail, mPassword, mPhoneNumber, mName;
 
     //Google sign in variables
     GoogleSignInOptions gso;
@@ -57,6 +67,12 @@ public class LoginActivity extends AppCompatActivity {
     CallbackManager callbackManager;
     AccessToken accessToken;
 
+    private Executor executor;
+    private BiometricPrompt biometricPrompt;
+    private BiometricPrompt.PromptInfo promptInfo;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://learnloop-1673224439925-default-rtdb.asia-southeast1.firebasedatabase.app/");
+    DatabaseReference databaseReference  = database.getReference().child("users");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +108,42 @@ public class LoginActivity extends AppCompatActivity {
 
         initWidget();
 
+        initUI();
+
         pageDirectories();
+    }
+
+    private void initUI() {
+        executor = ContextCompat.getMainExecutor(this);
+        biometricPrompt = new BiometricPrompt(LoginActivity.this, executor, new BiometricPrompt.AuthenticationCallback() {
+            @Override
+            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
+                super.onAuthenticationError(errorCode, errString);
+                //f there's any error that comes up while auth
+                Toast.makeText(LoginActivity.this, "Error while using biometric login", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
+                super.onAuthenticationSucceeded(result);
+                //Authentication successful
+                Toast.makeText(LoginActivity.this, "Authentication successful", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAuthenticationFailed() {
+                super.onAuthenticationFailed();
+                //fail to authenticate
+                Toast.makeText(LoginActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //Setup title, description on auth dialog
+        promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                .setTitle("Biometric Authentiction")
+                .setSubtitle("Login using fingerprint or face")
+                .setNegativeButtonText("Cancel")
+                .build();
     }
 
     private void pageDirectories() {
@@ -110,9 +161,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                mPhoneNumber = editTxt_phoneNumber.getText().toString();
                 mEmail = editTxt_loginEmail.getText().toString();
                 mPassword = editTxt_loginPassword.getText().toString();
 
+                validatePhoneNumber();
                 validateEmail();
                 validatePassword();
                 validateInput();
@@ -145,7 +198,26 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        btn_biometricLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //show auth dialog
+                biometricPrompt.authenticate(promptInfo);
+            }
+        });
     }
+
+    private boolean validatePhoneNumber() {
+        if (mPhoneNumber.isEmpty())
+        {
+            editTxt_phoneNumber.setError("Required");
+            return false;
+        }
+        else
+            return true;
+    }
+
 
     private void googleSignIn() {
         Intent signInIntent = gsc.getSignInIntent();
@@ -154,11 +226,53 @@ public class LoginActivity extends AppCompatActivity {
 
     private void validateInput() {
 
-        if (!validateEmail() | !validatePassword())
+        if (!validatePhoneNumber() | !validateEmail() | !validatePassword())
             return;
         else
         {
-            //TODO: Set up the conditions and firebase to cross check if the acc is in the database
+            //Authenticating with real time firebase database
+            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.hasChild(mPhoneNumber))
+                    {
+                        // Name exist in firebase database
+                        // now getting password of user from firebase data and match if with user entered password and username
+
+                        final String getName = snapshot.child(mPhoneNumber).child("User's Information").child("Full Name").getValue(String.class);
+                        final String getPhoneNumber = snapshot.child(mPhoneNumber).child("User's Information").child("Phone Number").getValue(String.class);
+                        final String getEmail = snapshot.child(mPhoneNumber).child("User's Information").child("Email").getValue(String.class);
+                        final String getPassword = snapshot.child(mPhoneNumber).child("User's Information").child("Password").getValue(String.class);
+
+                        if ((getPassword.equals(mPassword)) && getPhoneNumber.equals(mPhoneNumber) && getEmail.equals(mEmail))
+                        {
+                            // Lead user to the Main Menu Page activity
+                            Toast.makeText(LoginActivity.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+
+                            intent.putExtra("Name", getName);
+                            intent.putExtra("Phone Number", mPhoneNumber);
+                            intent.putExtra("Email", mEmail);
+                            intent.putExtra("Password", mPassword);
+
+                            startActivity(intent);
+
+                            finish();
+                        }
+                        else
+                            Toast.makeText(LoginActivity.this, "Log In unsuccessful, please check your password or username", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(LoginActivity.this, "Log In unsuccessful, please check your mobile number", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
         }
 
     }
@@ -207,6 +321,7 @@ public class LoginActivity extends AppCompatActivity {
         // EditText
         editTxt_loginEmail = findViewById(R.id.editTxt_loginEmail);
         editTxt_loginPassword = findViewById(R.id.editTxt_loginPassword);
+        editTxt_phoneNumber = findViewById(R.id.editTxt_phoneNumber);
 
         // Clickable ImageView -> Register with Google, Instagram and/or LinkedIn
         btn_google = findViewById(R.id.btn_google);
@@ -215,6 +330,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Button
         btn_login = findViewById(R.id.btn_login);
+        btn_biometricLogin = findViewById(R.id.btn_biometricLogin);
     }
 
     @Override

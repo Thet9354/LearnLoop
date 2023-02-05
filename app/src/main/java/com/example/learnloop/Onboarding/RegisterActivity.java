@@ -41,12 +41,12 @@ import java.util.regex.Pattern;
 public class RegisterActivity extends AppCompatActivity {
 
     private TextView txtView_logIn;
-    private EditText editTxt_name, editTxt_email, editTxt_password, editTxt_passwordConfirmation;
+    private EditText editTxt_name, editTxt_email, editTxt_password, editTxt_passwordConfirmation, editTxt_phoneNumber;
     private ImageView btn_google, btn_instagram, btn_facebook, imgView_learnLoop;
     private Button btn_getStarted;
 
     //String to store input data
-    private String mName, mEmail, mPassword, mConfirmPassword;
+    private String mName, mEmail, mPassword, mConfirmPassword, mPhoneNumber;
 
     //Google sign in variables
     GoogleSignInOptions gso;
@@ -103,11 +103,13 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 mName = editTxt_name.getText().toString();
+                mPhoneNumber = editTxt_phoneNumber.getText().toString();
                 mEmail = editTxt_email.getText().toString();
                 mPassword = editTxt_password.getText().toString();
                 mConfirmPassword = editTxt_passwordConfirmation.getText().toString();
 
                 validateName();
+                validatePhoneNumber();
                 validateEmail();
                 validatePassword();
                 validateConfirmPassword();
@@ -158,6 +160,17 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    private boolean validatePhoneNumber() {
+
+        if (mPhoneNumber.isEmpty())
+        {
+            editTxt_phoneNumber.setError("Required");
+            return false;
+        }
+        else
+            return true;
+    }
+
     private void signIn() {
         Intent signInIntent = gsc.getSignInIntent();
         startActivityForResult(signInIntent, 1000);
@@ -165,7 +178,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void validateInputs() {
 
-        if (!validateName() | !validateEmail() | !validatePassword() | !validateConfirmPassword())
+        if (!validateName() | !validatePhoneNumber() | !validateEmail() | !validatePassword() | !validateConfirmPassword())
         {
             return;
         }
@@ -175,6 +188,7 @@ public class RegisterActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), AskInformationActivity.class);
             intent.putExtra("Name", mName);
             intent.putExtra("Email", mEmail);
+            intent.putExtra("Phone Number", mPhoneNumber);
             intent.putExtra("Password", mPassword);
             startActivity(intent);
 
@@ -263,6 +277,7 @@ public class RegisterActivity extends AppCompatActivity {
         editTxt_email = findViewById(R.id.editTxt_email);
         editTxt_password = findViewById(R.id.editTxt_password);
         editTxt_passwordConfirmation = findViewById(R.id.editTxt_passwordConfirmation);
+        editTxt_phoneNumber = findViewById(R.id.editTxt_phoneNumber);
 
         // ImageView
         btn_google = findViewById(R.id.btn_google);

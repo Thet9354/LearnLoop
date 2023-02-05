@@ -1,11 +1,13 @@
 package com.example.learnloop.Fragments;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -22,9 +24,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.learnloop.AboutActivity;
+import com.example.learnloop.MainActivity;
+import com.example.learnloop.Onboarding.AskInformationActivity;
+import com.example.learnloop.Onboarding.LoginActivity;
+import com.example.learnloop.Onboarding.RegisterActivity;
 import com.example.learnloop.R;
 import com.example.learnloop.SuccessAddActivty;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -43,9 +54,14 @@ public class AddTransactionFragment extends Fragment {
 
     private Context mContext;
 
+    private String name, phoneNumber, email, password;
+
     //Variable to store transaction details in
     private String mTransactionFlow, mTitle, mAmount, mPurpose, mDesc, mLocation;
     private int mTransactionImg, mLat, mLon;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://learnloop-1673224439925-default-rtdb.asia-southeast1.firebasedatabase.app/");
+    DatabaseReference databaseReference  = database.getReference().child("users");
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -88,8 +104,22 @@ public class AddTransactionFragment extends Fragment {
         //Material Button
         btn_recordDetails = v.findViewById(R.id.btn_recordDetails);
 
+        getIntentData();
 
         pageDirectories();
+    }
+
+    private void getIntentData() {
+
+        name = getArguments().getString("Name");
+        phoneNumber = getArguments().getString("Phone Number");
+        email = getArguments().getString("Email");
+        password = getArguments().getString("Password");
+
+        System.out.println(name);
+        System.out.println(email);
+        System.out.println(password);
+
     }
 
     private void pageDirectories() {
@@ -155,14 +185,40 @@ public class AddTransactionFragment extends Fragment {
         }
         else
         {
-            //TODO: Allow transaction and save it to firebase
-            Toast.makeText(mContext, "Transaction added", Toast.LENGTH_SHORT).show();
+            //Adding data into google realtime database
+            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-            Intent intent = new Intent(mContext, SuccessAddActivty.class);
-            intent.putExtra("Transaction Title", mTitle);
-            intent.putExtra("Transaction Purpose", mPurpose);
-            intent.putExtra("Transaction Amount", mAmount);
-            getActivity().startActivity(intent);
+                        databaseReference.child(phoneNumber).child("User's Transaction").child("Flow of Transaction").setValue(mTransactionFlow);
+                        databaseReference.child(phoneNumber).child("User's Transaction").child("Title").setValue(mTitle);
+                        databaseReference.child(phoneNumber).child("User's Transaction").child("Amount").setValue(mAmount);
+                        databaseReference.child(phoneNumber).child("User's Transaction").child("Purpose").setValue(mPurpose);
+
+                        databaseReference.child(phoneNumber).child("User's Transaction").child("Description").setValue(mDesc);
+                        databaseReference.child(phoneNumber).child("User's Transaction").child("Transaction Image").setValue(mTransactionImg);
+                        databaseReference.child(phoneNumber).child("User's Transaction").child("Longitude").setValue(mLon);
+                        databaseReference.child(phoneNumber).child("User's Transaction").child("Latitude").setValue(mLat);
+
+
+                    Toast.makeText(mContext, "Transaction added", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(mContext, SuccessAddActivty.class);
+                    intent.putExtra("Transaction Title", mTitle);
+                    intent.putExtra("Transaction Purpose", mPurpose);
+                    intent.putExtra("Transaction Amount", mAmount);
+                    getActivity().startActivity(intent);
+                    }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+
+
 
 //            FragmentManager fragmentManager = getFragmentManager();
 //
