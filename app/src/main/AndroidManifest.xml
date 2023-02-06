@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.learnloop">
+    package="com.example.learnloop" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -19,24 +20,31 @@
         android:roundIcon="@drawable/learnloop_icon_circle"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnLoop"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        <activity
+            android:name=".MapActiivty2"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".AboutUs_Activity"
-            android:exported="false">
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Looprary.EventDetailsActivity"
-            android:exported="false">
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Looprary.CourseDetailsActivity"
-            android:exported="false">
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -45,7 +53,7 @@
             android:name=".SuccessAddActivty"
             android:configChanges="orientation"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -54,7 +62,7 @@
             android:name=".AboutActivity"
             android:configChanges="orientation"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -63,7 +71,7 @@
             android:name=".Onboarding.AskInformationActivity"
             android:configChanges="orientation"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -72,7 +80,7 @@
             android:name=".Onboarding.RegisterActivity"
             android:configChanges="orientation"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -81,7 +89,7 @@
             android:name=".Onboarding.LoginActivity"
             android:configChanges="orientation"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -90,7 +98,7 @@
             android:name=".MainActivity"
             android:configChanges="orientation"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -99,7 +107,7 @@
             android:name=".Splash.SplashActivity"
             android:configChanges="orientation"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -124,7 +132,7 @@
             android:label="@string/app_name" />
         <activity
             android:name="com.facebook.CustomTabActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -134,6 +142,9 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAX3K97560kwqtBD8jc0a0AVS7qn5AHTao" />
     </application>
 
 </manifest>

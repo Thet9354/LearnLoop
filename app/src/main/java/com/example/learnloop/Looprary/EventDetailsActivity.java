@@ -19,6 +19,9 @@ public class EventDetailsActivity extends AppCompatActivity {
 
     private ImageView imgView_event, imgView_eventHost;
 
+    private String eventTitle, hostName, hostDesc, eventParticipants;
+    private int eventImage, hostImage;
+
     private Intent intent;
 
 
@@ -32,9 +35,31 @@ public class EventDetailsActivity extends AppCompatActivity {
 
         initWidget();
 
+        getIntentData();
+
         initUI();
 
         pageDirectories();
+    }
+
+    private void getIntentData() {
+
+        eventTitle = intent.getStringExtra("Event Title");
+        hostName = intent.getStringExtra("Host Name");
+        hostDesc = intent.getStringExtra("Host Desc");
+        eventParticipants = intent.getStringExtra("Event Participants");
+
+        eventImage = intent.getIntExtra("Event Image", 0);
+        hostImage = intent.getIntExtra("Host Image", 0);
+
+        System.out.println(eventTitle);
+        System.out.println(hostName);
+        System.out.println(hostDesc);
+        System.out.println(eventParticipants);
+
+        System.out.println(eventImage);
+        System.out.println(hostImage);
+
     }
 
     private void initUI() {

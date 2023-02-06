@@ -134,7 +134,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView17"
+                    android:layout_below="@id/txtView_lessonsProgress"
                     android:layout_marginTop="10dp">
 
                     <ImageView

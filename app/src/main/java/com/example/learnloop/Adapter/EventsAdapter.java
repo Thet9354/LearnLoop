@@ -1,6 +1,7 @@
 package com.example.learnloop.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.learnloop.Looprary.CourseDetailsActivity;
+import com.example.learnloop.Looprary.EventDetailsActivity;
 import com.example.learnloop.Model.Events;
 import com.example.learnloop.Model.Transaction;
 import com.example.learnloop.R;
@@ -65,6 +68,23 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.CardViewHo
 
         holder.imgView_event.setImageResource(eventsArrayList.get(position).getEventImage());
         holder.imgView_host.setImageResource(eventsArrayList.get(position).getHostImage());
+
+        holder.cv_events.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, EventDetailsActivity.class);
+                int pos = holder.getAdapterPosition();
+                intent.putExtra("Event Title", eventsArrayList.get(pos).getEventTitle());
+                intent.putExtra("Host Name", eventsArrayList.get(pos).getEventHost());
+                intent.putExtra("Host Desc", eventsArrayList.get(pos).getHostDesc());
+                intent.putExtra("Event Participants", eventsArrayList.get(pos).getEventParticipants());
+
+                intent.putExtra("Event Image", eventsArrayList.get(pos).getEventImage());
+                intent.putExtra("Host Image", eventsArrayList.get(pos).getHostImage());
+
+                mContext.startActivity(intent);
+            }
+        });
 
     }
 

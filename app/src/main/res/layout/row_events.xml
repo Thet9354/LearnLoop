@@ -2,15 +2,17 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/cv_events"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="300dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#2C2C2C"
+    android:layout_gravity="center_horizontal"
     xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
         android:id="@+id/rel_events"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_rect_10"
-        android:clickable="true">
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@drawable/rounded_rect_10">
 
         <ImageView
             android:id="@+id/imgView_event"

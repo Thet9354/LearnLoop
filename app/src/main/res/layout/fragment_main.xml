@@ -179,16 +179,16 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-
                     android:padding="10dp" />
 
                 <TextView
                     android:id="@+id/txtView_noTransaction"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
                     android:text="No current transaction yet..."
-                    android:textColor="@color/white"
-                    android:layout_centerInParent="true"/>
+                    android:visibility="gone"
+                    android:textColor="@color/white" />
 
             </RelativeLayout>
 

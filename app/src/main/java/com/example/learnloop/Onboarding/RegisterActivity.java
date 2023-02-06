@@ -2,7 +2,9 @@ package com.example.learnloop.Onboarding;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -62,6 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
         getSupportActionBar().hide();
+
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gsc = GoogleSignIn.getClient(getApplicationContext(), gso);
@@ -194,6 +197,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
     }
+
+
 
     private boolean validateConfirmPassword() {
 

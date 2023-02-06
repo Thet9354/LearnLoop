@@ -52,6 +52,12 @@ public class LoopraryFragment extends Fragment {
             R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101,
             R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101};
 
+    int[] eventPic = {R.drawable.smu_citi_financial_literacy, R.drawable.smu_citi_financial_literacy, R.drawable.smu_citi_financial_literacy,
+            R.drawable.smu_citi_financial_literacy, R.drawable.smu_citi_financial_literacy};
+
+    int[] eventHostPic = {R.drawable.smu_logo, R.drawable.smu_logo, R.drawable.smu_logo,
+            R.drawable.smu_logo, R.drawable.smu_logo};
+
     private static final String[] COURSENAME = new String[]{
             "Investment 101",
             "Cryptocurrency",
@@ -105,7 +111,7 @@ public class LoopraryFragment extends Fragment {
 
         //for better performance of recyclerview.
 
-        int spaceInPixels = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1, getResources().getDisplayMetrics());
+        int spaceInPixels = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
         rv_course.addItemDecoration(new SpaceItemDecoration(spaceInPixels));
 
         rv_course.setHasFixedSize(true);
@@ -120,8 +126,6 @@ public class LoopraryFragment extends Fragment {
         llm.setOrientation(LinearLayoutManager.HORIZONTAL);
         llm.setAutoMeasureEnabled(true);
 
-
-
         //set layoutmanager for recyclerview.
         rv_course.setLayoutManager(llm);
 
@@ -133,7 +137,7 @@ public class LoopraryFragment extends Fragment {
         //for better performance of recyclerview.
 
         int spaceInPixels = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
-        rv_course.addItemDecoration(new SpaceItemDecoration(spaceInPixels));
+        rv_events.addItemDecoration(new SpaceItemDecoration(spaceInPixels));
 
         rv_events.setHasFixedSize(true);
 
@@ -167,19 +171,24 @@ public class LoopraryFragment extends Fragment {
         protected String doInBackground(String... args) {
             try {
 
-                String[] transactionTitle = getResources().getStringArray(R.array.transaction_title);
-                String[] transactionPurpose = getResources().getStringArray(R.array.transaction_purpose);
-                String[] transactionAmount = getResources().getStringArray(R.array.transaction_amount);
+                String[] eventTitle = getResources().getStringArray(R.array.event_title);
+                String[] eventHost = getResources().getStringArray(R.array.event_host);
+                String[] eventHostDesc = getResources().getStringArray(R.array.host_desc);
+                String[] eventParticipants = getResources().getStringArray(R.array.event_participants);
 
 
-                for (int i = 0 ; i < transactionTitle.length; i++)
+                for (int i = 0 ; i < eventTitle.length; i++)
                 {
                     events = new Events();
 
-//                    events.setTransactionPic(transactionPic[i]);
-//                    events.setTitle(transactionTitle[i]);
-//                    events.setPurpose(transactionPurpose[i]);
-//                    events.setAmount(transactionAmount[i]);
+                    events.setEventImage(eventPic[i]);
+                    events.setHostImage(eventHostPic[i]);
+
+                    events.setEventTitle(eventTitle[i]);
+                    events.setEventHost(eventHost[i]);
+                    events.setHostDesc(eventHostDesc[i]);
+                    events.setEventParticipants(eventParticipants[i]);
+
                     eventsArrayList.add(events);
                     events = null;
                 }

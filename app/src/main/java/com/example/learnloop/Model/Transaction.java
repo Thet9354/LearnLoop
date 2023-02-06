@@ -6,9 +6,9 @@ public class Transaction {
     private int transactionPic;
 
     private String transactionFlow;
-    private String title;
-    private String amount;
-    private String purpose;
+    private String Title;
+    private String Amount;
+    private String Purpose;
     private String desc;
     private String location;
     private String lon;
@@ -18,9 +18,9 @@ public class Transaction {
         this.id = id;
         this.transactionPic = transactionPic;
         this.transactionFlow = transactionFlow;
-        this.title = title;
-        this.amount = amount;
-        this.purpose = purpose;
+        this.Title = title;
+        this.Amount = amount;
+        this.Purpose = purpose;
         this.desc = desc;
         this.location = location;
         this.lon = lon;
@@ -56,27 +56,27 @@ public class Transaction {
     }
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Title = title;
     }
 
     public String getAmount() {
-        return amount;
+        return Amount;
     }
 
     public void setAmount(String amount) {
-        this.amount = amount;
+        Amount = amount;
     }
 
     public String getPurpose() {
-        return purpose;
+        return Purpose;
     }
 
     public void setPurpose(String purpose) {
-        this.purpose = purpose;
+        Purpose = purpose;
     }
 
     public String getDesc() {

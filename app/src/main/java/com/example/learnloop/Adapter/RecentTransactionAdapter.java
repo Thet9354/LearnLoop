@@ -58,9 +58,37 @@ public class RecentTransactionAdapter extends RecyclerView.Adapter<RecentTransac
 
         holder.txtView_title.setText(transactionArrayList.get(position).getTitle());
         holder.txtView_purpose.setText(transactionArrayList.get(position).getPurpose());
-        holder.txtView_payment.setText(transactionArrayList.get(position).getAmount());
+        holder.txtView_payment.setText("-$" + transactionArrayList.get(position).getAmount());
 
-        holder.img_transaction.setImageResource(transactionArrayList.get(position).getTransactionPic());
+        switch (transactionArrayList.get(position).getPurpose())
+        {
+            case "Food and Drinks":
+                holder.img_transaction.setImageResource(R.drawable.foodndrink);
+                break;
+            case "Entertainment":
+                holder.img_transaction.setImageResource(R.drawable.entertainment);
+                break;
+            case "Transport":
+                holder.img_transaction.setImageResource(R.drawable.transport);
+                break;
+            case "Shopping":
+                holder.img_transaction.setImageResource(R.drawable.shopping);
+                break;
+            case "Grocery":
+                holder.img_transaction.setImageResource(R.drawable.grocery);
+                break;
+            case "Subscription":
+                holder.img_transaction.setImageResource(R.drawable.subscription);
+                break;
+            case "Investment":
+                holder.img_transaction.setImageResource(R.drawable.investment);
+                break;
+            case "Others":
+                holder.img_transaction.setImageResource(R.drawable.others);
+                break;
+        }
+
+
 
     }
 

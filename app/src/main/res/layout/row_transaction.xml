@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:id="@+id/cv_transaction"
     android:background="#2C2C2C"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_transaction"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         card_view:cardUseCompatPadding="true">
@@ -77,6 +77,6 @@
 
         </FrameLayout>
 
-    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
-</RelativeLayout>
+</androidx.cardview.widget.CardView>

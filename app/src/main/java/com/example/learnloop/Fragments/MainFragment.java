@@ -1,17 +1,22 @@
 package com.example.learnloop.Fragments;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.telephony.SmsManager;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +32,7 @@ import com.example.learnloop.MainActivity;
 import com.example.learnloop.Model.Transaction;
 import com.example.learnloop.Onboarding.LoginActivity;
 import com.example.learnloop.R;
+import com.example.learnloop.SpaceItemDecoration;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -58,6 +64,8 @@ public class MainFragment extends Fragment {
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://learnloop-1673224439925-default-rtdb.asia-southeast1.firebasedatabase.app/");
     DatabaseReference databaseReference  = database.getReference().child("users");
 
+    Transaction transaction;
+
     String getName;
     String getPhoneNumber;
     String getEmail;
@@ -65,8 +73,6 @@ public class MainFragment extends Fragment {
     String getAllowanceType;
     String getBudgetGoal;
     String getBalance;
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -112,7 +118,6 @@ public class MainFragment extends Fragment {
 
         initUI();
 
-        expenditureAlert();
 
         pageDirectories();
     }
@@ -128,22 +133,41 @@ public class MainFragment extends Fragment {
 
         SmsManager smsManager = SmsManager.getDefault();
 
-        if (cardBalance > cardLimit)
-        {
-            //SEND ALERT
-            alertMessage = "Hey" + name + " !" +" \n" +
-                    "You've exceeded your budget!!";
-            smsManager.sendTextMessage(phoneNumber, null, alertMessage, null, null);
+        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.SEND_SMS)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Permission is not granted
+            // Should we show an explanation?
+            if (shouldShowRequestPermissionRationale(Manifest.permission.SEND_SMS)) {
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+            } else {
+                // No explanation needed; request the permission
+                requestPermissions(new String[]{Manifest.permission.SEND_SMS, Manifest.permission.READ_SMS}, PackageManager.PERMISSION_GRANTED);
+            }
+        } else {
+            // Permission has already been granted
+            if (cardBalance > cardLimit)
+            {
+                //SEND ALERT
+                alertMessage = "Hey" + name + " !" +" \n" +
+                        "You've exceeded your budget!!";
+                smsManager.sendTextMessage(phoneNumber, null, alertMessage, null, null);
+            }
+            else if (balanceDiff > 90)
+            {
+                //Send alert
+                alertMessage = "Hey" + name + " !" +" \n" +
+                        "You are about to exceed your budget. Be more mindful with your expenditures!!";
+                smsManager.sendTextMessage(phoneNumber, null, alertMessage, null, null);
+            }
+            else
+                return;
         }
-        else if (balanceDiff > 90)
-        {
-            //Send alert
-            alertMessage = "Hey" + name + " !" +" \n" +
-                    "You are about to exceed your budget. Be more mindful with your expenditures!!";
-            smsManager.sendTextMessage(phoneNumber, null, alertMessage, null, null);
-        }
-        else
-            return;
+
+
+
+        System.out.println("Passed through");
 
     }
 
@@ -194,6 +218,7 @@ public class MainFragment extends Fragment {
                     txtView_cardLimit.setText("/ $" + getBudgetGoal);
                     txtView_cardBalance.setText("$" + getBalance);
 
+                    expenditureAlert();
 
                 }
             }
@@ -206,17 +231,17 @@ public class MainFragment extends Fragment {
 
         initRecView();
 
-        if (rv_recentTransaction.getAdapter().getItemCount() == 0)
-        {
-            //Hide recyclerView
-            rv_recentTransaction.setVisibility(View.GONE);
-            txtView_noTransaction.setVisibility(View.VISIBLE);
-        }
-        else
-        {
-            rv_recentTransaction.setVisibility(View.VISIBLE);
-            txtView_noTransaction.setVisibility(View.GONE);
-        }
+//        if (rv_recentTransaction.getAdapter().getItemCount() == 0)
+//        {
+//            //Hide recyclerView
+//            rv_recentTransaction.setVisibility(View.GONE);
+//            txtView_noTransaction.setVisibility(View.VISIBLE);
+//        }
+//        else
+//        {
+//            rv_recentTransaction.setVisibility(View.VISIBLE);
+//            txtView_noTransaction.setVisibility(View.GONE);
+//        }
 
 
 
@@ -230,6 +255,9 @@ public class MainFragment extends Fragment {
         recentTransactionAdapter = new RecentTransactionAdapter(getContext(), transactionArrayList);
         rv_recentTransaction.setAdapter(recentTransactionAdapter);
 
+        int spaceInPixels = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1, getResources().getDisplayMetrics());
+        rv_recentTransaction.addItemDecoration(new SpaceItemDecoration(spaceInPixels));
+
         //layout to contain recyclerview
         LinearLayoutManager llm = new LinearLayoutManager(mContext);
         llm.setSmoothScrollbarEnabled(true);
@@ -240,57 +268,26 @@ public class MainFragment extends Fragment {
         //set layoutmanager for recyclerview.
         rv_recentTransaction.setLayoutManager(llm);
 
-        new loadRecentTransaction().execute();
-    }
+        rv_recentTransaction.setAdapter(recentTransactionAdapter);
 
-    Transaction transaction;
-
-    class loadRecentTransaction extends AsyncTask<String, String, String> {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        protected String doInBackground(String... args) {
-            try {
-
-                String[] transactionTitle = getResources().getStringArray(R.array.transaction_title);
-                String[] transactionPurpose = getResources().getStringArray(R.array.transaction_purpose);
-                String[] transactionAmount = getResources().getStringArray(R.array.transaction_amount);
-
-
-                for (int i = 0 ; i < transactionTitle.length; i++)
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot: snapshot.child(phoneNumber).child("User's Transaction").getChildren())
                 {
-                    transaction = new Transaction();
-//                    favNft.setNftID(i);
-                    transaction.setTransactionPic(transactionPic[i]);
-//                    favNft.setNftCategory(destinationID[i]);
-                    transaction.setTitle(transactionTitle[i]);
-                    transaction.setPurpose(transactionPurpose[i]);
-                    transaction.setAmount(transactionAmount[i]);
+                    transaction = dataSnapshot.getValue(Transaction.class);
                     transactionArrayList.add(transaction);
-                    transaction = null;
                 }
-
-
-            } catch (Exception e) {
-                e.printStackTrace();
-
-            }
-
-            return null;
-        }
-
-        protected void onPostExecute(String file_url) {
-
-//            pgbPopulardestination.setVisibility(View.GONE);
-
-            if (transactionArrayList != null && transactionArrayList.size() > 0) {
-                recentTransactionAdapter = new RecentTransactionAdapter(mContext, transactionArrayList);
-                rv_recentTransaction.setAdapter(recentTransactionAdapter);
                 recentTransactionAdapter.notifyDataSetChanged();
+
             }
-        }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
+
 }
