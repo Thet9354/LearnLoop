@@ -78,6 +78,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.CardViewHo
                 intent.putExtra("Host Name", eventsArrayList.get(pos).getEventHost());
                 intent.putExtra("Host Desc", eventsArrayList.get(pos).getHostDesc());
                 intent.putExtra("Event Participants", eventsArrayList.get(pos).getEventParticipants());
+                intent.putExtra("Event Link", eventsArrayList.get(pos).getEventLink());
 
                 intent.putExtra("Event Image", eventsArrayList.get(pos).getEventImage());
                 intent.putExtra("Host Image", eventsArrayList.get(pos).getHostImage());

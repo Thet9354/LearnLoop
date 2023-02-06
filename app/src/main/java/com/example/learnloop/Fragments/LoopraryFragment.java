@@ -175,6 +175,7 @@ public class LoopraryFragment extends Fragment {
                 String[] eventHost = getResources().getStringArray(R.array.event_host);
                 String[] eventHostDesc = getResources().getStringArray(R.array.host_desc);
                 String[] eventParticipants = getResources().getStringArray(R.array.event_participants);
+                String[] eventLink = getResources().getStringArray(R.array.event_link);
 
 
                 for (int i = 0 ; i < eventTitle.length; i++)
@@ -188,6 +189,7 @@ public class LoopraryFragment extends Fragment {
                     events.setEventHost(eventHost[i]);
                     events.setHostDesc(eventHostDesc[i]);
                     events.setEventParticipants(eventParticipants[i]);
+                    events.setEventLink(eventLink[i]);
 
                     eventsArrayList.add(events);
                     events = null;

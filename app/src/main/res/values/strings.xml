@@ -76,6 +76,14 @@
         <item name="smu">1,200+ Participants</item>
     </string-array>
 
+    <string-array name="event_link">
+        <item name="smu">https://skbi.smu.edu.sg/cfs</item>
+        <item name="smu">https://skbi.smu.edu.sg/cfs</item>
+        <item name="smu">https://skbi.smu.edu.sg/cfs</item>
+        <item name="smu">https://skbi.smu.edu.sg/cfs</item>
+        <item name="smu">https://skbi.smu.edu.sg/cfs</item>
+    </string-array>
+
     <string-array name="course_title">
         <item name="Financial Market">Introduction to Financial Markets</item>
         <item name="Introduction to Finance and Accounting">Introduction to Finance and Accounting</item>

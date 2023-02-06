@@ -10,8 +10,9 @@ public class Events {
     private String eventHost;
     private String hostDesc;
     private String eventParticipants;
+    private String eventLink;
 
-    public Events(int id, int eventImage, int hostImage, String eventTitle, String eventHost, String hostDesc, String eventParticipants) {
+    public Events(int id, int eventImage, int hostImage, String eventTitle, String eventHost, String hostDesc, String eventParticipants, String eventLink) {
         this.id = id;
         this.eventImage = eventImage;
         this.hostImage = hostImage;
@@ -19,6 +20,7 @@ public class Events {
         this.eventHost = eventHost;
         this.hostDesc = hostDesc;
         this.eventParticipants = eventParticipants;
+        this.eventLink = eventLink;
     }
 
     public Events() {
@@ -81,4 +83,11 @@ public class Events {
         this.eventParticipants = eventParticipants;
     }
 
+    public String getEventLink() {
+        return eventLink;
+    }
+
+    public void setEventLink(String eventLink) {
+        this.eventLink = eventLink;
+    }
 }

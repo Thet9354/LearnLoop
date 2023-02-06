@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/backButton1"
+                    android:id="@+id/btn_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -51,7 +51,7 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/welcomeLoopMsg"
+                android:id="@+id/txtView_eventTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -61,7 +61,7 @@
                 android:textSize="25sp" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/imgView_event"
                 android:background="@drawable/rounded_rect_10_white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,36 +71,36 @@
                 android:id="@+id/hoster"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/imageView5"
+                android:layout_below="@id/imgView_event"
                 android:layout_marginTop="20dp">
 
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/imgView_host"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:src="@drawable/smu_logo" />
 
                 <TextView
-                    android:id="@+id/textView18"
+                    android:id="@+id/txtView_eventHost"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="15dp"
-                    android:layout_toRightOf="@id/imageView6"
+                    android:layout_toRightOf="@id/imgView_host"
                     android:fontFamily="@font/thin_poppins"
                     android:text="@string/smu_name"
                     android:textColor="@color/white"
                     android:textSize="12dp" />
 
                 <TextView
-                    android:id="@+id/textView19"
+                    android:id="@+id/txtView_eventHostDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView18"
+                    android:layout_below="@id/txtView_eventHost"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="15dp"
-                    android:layout_toRightOf="@id/imageView6"
+                    android:layout_toRightOf="@id/imgView_host"
                     android:fontFamily="@font/thin_poppins"
                     android:text="@string/smu_subname"
                     android:textColor="@color/hint"
@@ -121,11 +121,10 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/rounded_rect_10"
-                >
+                android:background="@drawable/rounded_rect_10">
 
                 <TextView
-                    android:id="@+id/textView30"
+                    android:id="@+id/txtView_eventDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/thin_poppins"
@@ -135,7 +134,7 @@
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/textView31"
+                    android:id="@+id/txtView_seeMore"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="SEE MORE"
@@ -143,7 +142,7 @@
                     android:fontFamily="@font/thin_poppins"
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/blue"
-                    android:layout_below="@id/textView30"/>
+                    android:layout_below="@id/txtView_eventDesc"/>
             </RelativeLayout>
 
             <LinearLayout
@@ -152,7 +151,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/addToCalendar"
+                    android:id="@+id/btn_addToCalendar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -168,7 +167,7 @@
                     app:cornerRadius="10dp" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/registerForEvent"
+                    android:id="@+id/btn_emailOrganizer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -187,7 +186,7 @@
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/emailOrganisers"
+                android:id="@+id/btn_registerEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="100dp"
