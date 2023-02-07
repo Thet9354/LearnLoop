@@ -338,16 +338,55 @@
 
                 </RelativeLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_addToCalendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/thin_poppins"
+                        android:padding="6dp"
+                        app:backgroundTint="@color/orange"
+                        android:text="Add to Calendar"
+                        android:textColor="@color/black"
+                        android:layout_marginEnd="5dp"
+                        android:textAllCaps="false"
+                        android:textSize="10sp"
+                        app:cornerRadius="10dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_emailOrganizer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/pink"
+                        android:fontFamily="@font/thin_poppins"
+                        android:padding="6dp"
+                        android:textColor="@color/black"
+                        android:text="Email Organizers"
+                        android:textAllCaps="false"
+                        android:textSize="10sp"
+                        app:cornerRadius="10dp" />
+
+
+                </LinearLayout>
+
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_seeResource"
+                    android:id="@+id/btn_registerCourse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
                     android:layout_marginBottom="100dp"
                     android:backgroundTint="@color/blue"
                     android:fontFamily="@font/thin_poppins"
                     android:padding="6dp"
-                    android:text="Provided Resources"
+                    android:text="Register for Event"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="20sp"

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_yourAccount"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="Your Account"/>
+
+        <item
+            android:id="@+id/nav_securityNAccount"
+            android:icon="@drawable/ic_baseline_lock_24"
+            android:title="Security And Account Access"/>
+
+        <item
+            android:id="@+id/nav_privacyNSafety"
+            android:icon="@drawable/ic_baseline_privacy_tip_24"
+            android:title="Privacy And Safety"/>
+
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_baseline_notifications_24"
+            android:title="Notification"/>
+
+        <item
+            android:id="@+id/nav_accessibility"
+            android:icon="@drawable/ic_baseline_accessibility_new_24"
+            android:title="Accessibility, Display and Language"/>
+
+        <item
+            android:id="@+id/nav_additionalResource"
+            android:icon="@drawable/ic_baseline_more_horiz_24"
+            android:title="Additional Resources"/>
+
+
+    </group>
+
+</menu>

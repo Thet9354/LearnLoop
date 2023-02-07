@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black_background"
+    tools:context=".Settings.SettingsFragment.Notifications">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="14dp"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:id="@+id/txtView_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Notifications"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtView_Done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="Done"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=  "@string/YourAccount_description"
+                android:layout_below="@+id/txtView_yourAccount"
+                android:textColor="@color/white"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"/>
+
+            <!-- Filters -->
+            <LinearLayout
+                android:id="@+id/LL_filters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_back_white10_20"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <!--Filters-->
+                <RelativeLayout
+                    android:id="@+id/rel_filters"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_filters"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_back_night_mode"
+                        android:padding="12dp"
+                        android:src="@drawable/filter_icon" />
+
+                    <TextView
+                        android:id="@+id/txtView_filters"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/img_filters"
+                        android:text="Filters"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtView_filters"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="10dp"
+                        android:layout_toLeftOf="@id/btn_filters"
+                        android:layout_toRightOf="@id/img_filters"
+                        android:text="@string/filters"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/btn_filters"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/right_icon" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Preferences -->
+            <LinearLayout
+                android:id="@+id/LL_preference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_back_white10_20"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <!--Preferences-->
+                <RelativeLayout
+                    android:id="@+id/rel_preference"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_preference"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_back_night_mode"
+                        android:padding="12dp"
+                        android:src="@drawable/preference_icon" />
+
+                    <TextView
+                        android:id="@+id/txtView_preference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/img_preference"
+                        android:text="Preferences"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtView_preference"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toLeftOf="@id/btn_preference"
+                        android:layout_toRightOf="@id/img_preference"
+                        android:textColor="@color/white"
+                        android:text="@string/preferences"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/btn_preference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/right_icon" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

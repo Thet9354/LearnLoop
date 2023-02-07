@@ -16,4 +16,16 @@
         <item name="android:windowFullscreen">true</item>
 
     </style>
+
+
+
+    <!-- Theme Style for Night Mode Switch-->
+    <style name="greenSwitch" parent="Theme.AppCompat.Light">
+
+        <item name="colorControlActivated">@color/green</item>
+        <item name="colorSwitchThumbNormal">#FFFFFF</item>
+        <item name="android:colorForeground">#99FFFFFF</item>
+    </style>
+
+
 </resources>

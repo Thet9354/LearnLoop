@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Learn Loop</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="facebook_app_id">496379855971971</string>
     <string name="fb_login_protocol_scheme">fb1234</string>
@@ -18,11 +17,188 @@
     <string name="course1_title">Budgeting Principles</string>
     <string name="course1_lecturer">Kang Thet Sing</string>
     <string name="course1_lecturerpos">Senior Lecturer at SP</string>
+    
 
     <string name="smu_desc">In a competitive landscape where money often has the final word, there is a pressing need for young adults to learn about taking control of their finances. Many will want to start planning a roadmap to financial success. This is where the program aims to help answer the million-dollar question: how to stay the course and build lifelong wealth?\n\nAll of the essentials are included in this world-ready program. These...</string>
 
 
     <string name="budgeting_principles_desc">Making a budgeting plan is one thing. Sticking to it is another.\n\nThis course focuses on refreshing your budgeting knowledge acquired from school such as concepts, plans, identifying and classification of expenditures and more.\n\nThis course will also guide you on building a sustainable budgeting plan and share tips on how one can stick to the plan in the long r...</string>
+
+    <!-- Your account -->
+    <string name="Your_account">See information about your account, download an archive of your data, or learn about your account deactivation options.</string>
+
+    <!-- Security and account access -->
+    <string name="security_and_account">Manage your account\'s security and keep track of your account\'s usage including apps that you have connected to your account</string>
+
+    <!-- Privacy and safety -->
+    <string name="privacy_and_safety">Manage what information you see and share on Twitter.</string>
+
+    <!-- Notifications -->
+    <string name="notifications">Select the kinds of notifications you get about your activities, interest, and recommendations.</string>
+
+    <!-- Accessibility, display, and language -->
+    <string name="accessibility">Manage how SPACED content is displayed to you.</string>
+
+    <!-- Additional resources -->
+    <string name="Additional_resources">Check out other places for helpful information to learn more about SPACED products and services.</string>
+
+    <!-- Your account description -->
+    <string name="YourAccount_description">See information about your account, download an archive of your data, or learn about your account deactivation options.</string>
+
+    <!-- Account information -->
+    <string name="accInfo">See information about your account, download an archive of your data, or learn about your account deactivation options.</string>
+
+    <!-- Change Password -->
+    <string name="changePassword">Change your password at any time.</string>
+
+    <!-- Download an archive of your data -->
+    <string name="dataArchive">Get insights into the type of information stored for your account.</string>
+
+    <!-- Deactivate account -->
+    <string name="deactivateAcc">Find out how you can deactivate your account.</string>
+
+    <!-- Security and account access description -->
+    <string name="security_account_access_description">Manage your account\'s security and keep track of your account\'s usage including apps that you have connected to your account.</string>
+
+    <!-- Security -->
+    <string name="security">Manage your account\'s security</string>
+
+    <!-- Apps and session -->
+    <string name="apps_and_session">See information about when you logged into your account and the apps you connected to your account.</string>
+
+    <!-- Connected accounts -->
+    <string name="connectedAcc">Manage Google or Apple accounts connected to SPACED to log in.</string>
+
+    <!-- Ads preference -->
+    <string name="adsPreference">Manage your ads experience on LearnLoop.</string>
+
+    <!-- Off-SPACED activity -->
+    <string name="off_spaced_activity">Manage how LearnLoop uses your online activity outside of it, such as the website you visit, to personalize your experience.</string>
+
+    <!-- Data sharing with business partner -->
+    <string name="dataSharing">Allow sharing of additional information with LearnLoop\'s business partners.</string>
+
+    <!-- Location information -->
+    <string name="locationInfo">Manage the location information LearnLoop uses to personalize your experience.</string>
+
+    <!-- Notification description -->
+    <string name="notificationDesc">Select the kind of notifications you get about your activities, interests, and recommendations.</string>
+
+    <!-- Filters -->
+    <string name="filters">Choose the notifications you will like to see-and those you don\'t</string>
+
+    <!-- Preferences -->
+    <string name="preferences">Select your preferences by notification type.</string>
+
+    <!-- Accessibility, display, languages description-->
+    <string name="accessibility_display_language_description">Manage how LearnLoop content is displayed to you.</string>
+
+    <!-- Accessibility -->
+    <string name="Accessibility">Manage aspects of your LearnLoop experience such as limiting color contrast and motion. These settings affect all the LearnLoop accounts on the device.</string>
+
+    <!-- Display and sound -->
+    <string name="display_and_sound">Manage your font size, color and background.These settings affect all of LearnLoops accounts on this device.</string>
+
+    <!-- Languages -->
+    <string name="Languages">Manage which languages are used to personalize your LearnLoop experience.</string>
+
+    <!-- Data usage -->
+    <string name="dataUsage">Limit how LearnLoop uses some of your network data. These settings affect all the LearnLoop accounts on this device.</string>
+
+    <!-- Deactivation text -->
+    <string name="txtAccDeactivation">You\'re about to start the process of deactivating your SPACED account. Your display name, @username, and profile will no longer be viewable on SPACED.com, SPACED for iOS, or SPACED for Android.</string>
+
+    <!-- What else you should know -->
+    <string name="WhatElseToKnow">You can restore your SPACED account if it was accidentally or wrongfully deactivated for up to 30days after deactivation. \n \nSome account information may still be available in search engines, such as Google or Bing. \n \nIf you just want to change your @username, you don\'t need to deactivate your account - edit it in your settings. \n \nTo use your current @username or email address with a different SPACED account, change them before you deactivate this account. \n \nIf you want to download your SPACED data, you\'ll need to complete both the request and download process before deactivating your account. Links to download your data cannot be sent to deactivate accounts.</string>
+
+    <!-- Two-factor authentication-->
+    <string name="two_factor_authentication">Protect your account from unauthorized access by requiring a second authentication method in addition to your SPACED password. You can choose text message, authentication app, or security key.</string>
+
+    <!-- Password reset protection -->
+    <string name="passwordProtection">For added protection, you\'ll need to confirm your email address or phone number to reset your SPACED password.</string>
+
+    <!-- Ads preference -->
+    <string name="adsPreference_description">You will always see ads on SPACED based on your activity. When this setting is enabled, SPACED may further personalize ads from SPACED advertisers, on and off SPACED, by combining your activity with other online activity and information from our partners.</string>
+
+    <!-- SPACED content across web -->
+    <string name="SPACED_content_across_web">This setting lets SPACED keep track of your visits to other websites that integrate SPACED content, such as embedded timelines. That information makes SPACED better for you, such as by personalizing your experience. This web browsing history will never be stored with your name email, or phone number.</string>
+
+    <!-- Personalized identity -->
+    <string name="personalizedIdentity">SPACED will always personalize your experience based on information you\'ve provided, as well as the devices you\'ve used to log in. When this setting is enabled, SPACED may also personalize based on other inferences about your identity, like devices and browsers you haven\'t used to log in to SPACED or email addresses and phone numbers similar to those linked to your SPACED account.</string>
+
+    <!-- Off-SPACED activity -->
+    <string name="off_SPACED_description">Manage how SPACED uses your online activity outside of SPACED, such as the websites you visit, to personalize your experience.</string>
+
+    <!-- Information sharing -->
+    <string name="infoSharing">SPACED always shares information with business partners as a way to run and improve its products. When enabled, this allows SPACED to share additional information with those partners to help support running SPACED\'s business, including making SPACED\'s marketing activities on other sites and apps more relevant for you.</string>
+
+    <!-- Personalize location -->
+    <string name="personalizeLocation">SPACED always uses some information, like where you signed up and your current location, to help show you more relevant content. When this setting is enabled, SPACED may also personalize your experiences - for example, showing you more local content, ads, and recommendations.</string>
+
+    <!-- Precise location -->
+    <string name="preciseLocation">If enabled, SPACED will collect, store, and user your device\'s precise location, such as GPS information. This lets SPACED improve your experience-for example, showing you more local content, ads, and recommendations.</string>
+
+    <!-- Privacy policy intro -->
+    <string name="privacyPolicyIntro">Last update: 03/7/22 \n\n This page informs you of our policies regarding the collection, use and disclosure of Personal Information we receive from users of the app.\n\nWe use your Personal Information only for providing and improving the Site. By using the Site, you agree to the collection and use of information in accordance with this policy.</string>
+
+    <!-- Log data -->
+    <string name="logData">Like many app operators, we collect information that your browser sends whenever you visit our App.\n\n This Log Data may include information such as your computer\'s Internet Protocol (IP) address, browser type, browser version, the pages of our app that you visit, the time and date of your visit, the time spent on those pages and other statistics.</string>
+
+    <!-- Communication -->
+    <string name="communication">We will not use your Personal Information to contact you with newsletter, marketing or promotional materials and other information. We will only be contacting you through email with regards to new updates of the app and replies to our user\'s feedback.</string>
+
+    <!-- Information collection and use -->
+    <string name="infoCollection">While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information will include your name, contact information.</string>
+
+    <!-- Security -->
+    <string name="privacyPolicy_security">The security of your Personal Information is important to us, but remember that no method of transmission over the Internet, or method of electronic storage, is 100% secure. While we strive to use commercially acceptable means to protect your Personal Information, we cannot guarantee its absolute security.</string>
+
+    <!-- Changes to privacy policy -->
+    <string name="privacyPolicy_changes">This Privacy Policy is effective as of (add date) and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.\n\nWe reserve the right to update or change our Privacy Policy at any time and you should check this Privacy Policy periodically. Your continued use of the Service after we post any modifications to the Privacy Policy on this page will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified Privacy Policy.\n\n If we make any material changes to this Privacy Policy, we will notify you either through the email address you have provided us, or by placing a prominent notice on our app.</string>
+
+    <!-- Accessibility -->
+    <string name="Accessibility_desc">Manage aspects of your SPACED experience such as limiting color contrast and motion. These settings affect all the SPACED accounts on this device.</string>
+
+    <!-- Reduce motion -->
+    <string name="reduceMotion">Limits the amount of in-app animations, including screen transitions and live engagement counts.</string>
+
+    <!-- Reader view -->
+    <string name="readerView">Change text size, contrast, and page layout on website for improved readability.</string>
+
+    <!-- Display and sound description -->
+    <string name="display_and_sound_desc">Manage your font size, color and background. These settings affect all the SPACED accounts on this device.</string>
+
+    <!-- Display and sound description -->
+    <string name="display_sound_desc">Manage your font size, color and background. These settings affect all the SPACED accounts on this device.</string>
+
+    <!-- Display text demo -->
+    <string name="displayDemo">At the hear of SPACED are short messages called SPACEDTweets - just like this one - which can include photos, videos, links and text.</string>
+
+    <!-- Recommendations -->
+    <string name="recommendations">Select which languages you want text, people, and trends to include.</string>
+
+    <!-- Data usage -->
+    <string name="dataUsage_desc">limit how SPACED uses some of your network data. These settings affect all the SPACED accounts on this device.</string>
+
+    <!-- Data saver -->
+    <string name="dataSaver">When enabled, videos won\'t autoplay and lower-quality images load. This automatically reduces your data usage for all SPACED accounts on this device.</string>
+
+    <!-- Legal notice -->
+    <string name="legalNotice">Copyright © 2022–2031 P.Thet Pine. All rights reserved.\n\nCreated and based partly on code by P. Thet Pine on 4/7/22. \n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files, to deal in the Software without restriction,including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: \n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. \n\nAny person wishing to distribute modifications to the Software is asked to send the modifications to the original developer so that they can be incorporated into the canonical version. This is, however, not a binding provision of this license. \n\nTHE SOFTWARE IS PROVIDED [AS IF], WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
+
+    <!-- Authentication app -->
+    <string name="authenticationApp">Use an app to get an authentication code to enter when you log in to SPACED.</string>
+
+    <!-- Security key -->
+    <string name="securityKey">Use a security key that inserts into your computer or syncs to your mobile device when you log in to SPACED. You\'ll need to use a supported mobile device or web browser.</string>
+
+    <!-- Quality filter  -->
+    <string name="qualityFilter">Filter lower-quality content from your notifications. This won\'t filter out notifications from people you follow or accounts you\'ve interacted with recently.</string>
+
+    <!-- Email notification -->
+    <string name="emailNotification_desc">Get emails to find out what\'s going on when you\'re not on SPACED. You can turn them off anytime.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="transaction_title">
         <item name="Potato">Potato Corners</item>
@@ -82,6 +258,19 @@
         <item name="smu">https://skbi.smu.edu.sg/cfs</item>
         <item name="smu">https://skbi.smu.edu.sg/cfs</item>
         <item name="smu">https://skbi.smu.edu.sg/cfs</item>
+    </string-array>
+
+    <string-array name="course_link">
+        <item name="smu">https://www.coursera.org/learn/financial-markets-global</item>
+        <item name="smu">https://www.coursera.org/specializations/finance-accounting</item>
+        <item name="smu">https://www.coursera.org/specializations/investment-portolio-management</item>
+        <item name="smu">https://www.coursera.org/specializations/finance-quantitative-modeling-analysts</item>
+        <item name="smu">https://www.coursera.org/learn/finance-for-non-finance</item>
+        <item name="smu">https://www.coursera.org/learn/duke-behavioral-finance</item>
+        <item name="smu">https://www.coursera.org/specializations/wharton-business-financial-modeling</item>
+        <item name="smu">https://www.coursera.org/learn/finance-fundamentals</item>
+        <item name="smu">https://www.coursera.org/learn/python-statistics-financial-analysis</item>
+        <item name="smu">https://www.coursera.org/specializations/costaccounting</item>
     </string-array>
 
     <string-array name="course_title">
@@ -200,8 +389,6 @@
         <item name="Python and Statistic for Financial Analysis">28 December 2022</item>
         <item name="Cost Accounting">29 December 2022</item>
     </string-array>
-
-
 
 
 </resources>

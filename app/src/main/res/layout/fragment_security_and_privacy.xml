@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_background"
+    android:orientation="vertical"
+    tools:context=".Settings.SettingsFragment.SecurityAndPrivacy">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="14dp"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:id="@+id/txtView_security_and_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Security and account access"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtView_Done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="Done"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/security_account_access_description"
+        android:layout_below="@+id/txtView_yourAccount"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"/>
+
+    <!-- Security -->
+    <LinearLayout
+        android:id="@+id/LL_security"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_white10_20"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <!--Security-->
+        <RelativeLayout
+            android:id="@+id/rel_security"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_security"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/round_back_night_mode"
+                android:padding="12dp"
+                android:src="@drawable/password_icon" />
+
+            <TextView
+                android:id="@+id/txtView_security"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/img_security"
+                android:text="Security"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtView_security"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:layout_toLeftOf="@id/btn_security"
+                android:layout_toRightOf="@id/img_security"
+                android:text="@string/security"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/btn_security"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/black"
+                android:src="@drawable/right_icon" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- Apps and sessions -->
+    <LinearLayout
+        android:id="@+id/LL_apps_and_sessions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_white10_20"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <!--Apps and sessions-->
+        <RelativeLayout
+            android:id="@+id/rel_apps_and_sessions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_apps"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/round_back_night_mode"
+                android:padding="12dp"
+                android:src="@drawable/apps_sessions_icon" />
+
+            <TextView
+                android:id="@+id/txtView_apps_and_sessions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/img_apps"
+                android:text="Apps and sessions"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtView_apps_and_sessions"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@id/btn_apps_and_sessions"
+                android:layout_toRightOf="@id/img_apps"
+                android:textColor="@color/white"
+                android:text="@string/apps_and_session"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/btn_apps_and_sessions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/black"
+                android:src="@drawable/right_icon" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- Connected accounts -->
+    <LinearLayout
+        android:id="@+id/LL_connectedAcc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_white10_20"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <!--Connected accounts-->
+        <RelativeLayout
+            android:id="@+id/rel_connectedAcc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_connectedAcc"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/round_back_night_mode"
+                android:padding="12dp"
+                android:src="@drawable/connected_icon" />
+
+            <TextView
+                android:id="@+id/txtView_connectedAcc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/img_connectedAcc"
+                android:text="Connected accounts"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtView_connectedAcc"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:layout_toLeftOf="@id/btn_connectedAcc"
+                android:layout_toRightOf="@id/img_connectedAcc"
+                android:text="@string/connectedAcc"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/btn_connectedAcc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/black"
+                android:src="@drawable/right_icon" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black_background"
+    tools:context=".Settings.SettingsFragment.YourAccount">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="14dp"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:id="@+id/txtView_yourAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Your account"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtView_Done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="Done"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/YourAccount_description"
+        android:layout_below="@+id/txtView_yourAccount"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"/>
+
+    <!-- Account information -->
+    <LinearLayout
+        android:id="@+id/LL_accInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_white10_20"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <!--Account information-->
+        <RelativeLayout
+            android:id="@+id/rel_accInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_accInfo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/round_back_night_mode"
+                android:padding="12dp"
+                android:src="@drawable/person_icon" />
+
+            <TextView
+                android:id="@+id/txtView_accInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/img_accInfo"
+                android:text="Account information"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtView_accInfo"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:layout_toLeftOf="@id/btn_accInfo"
+                android:layout_toRightOf="@id/img_accInfo"
+                android:text="@string/accInfo"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/btn_accInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/black"
+                android:src="@drawable/right_icon" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- Change your password -->
+    <LinearLayout
+        android:id="@+id/LL_changePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_white10_20"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <!--Change password-->
+        <RelativeLayout
+            android:id="@+id/rel_changePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_changePassword"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/round_back_night_mode"
+                android:padding="12dp"
+                android:src="@drawable/change_password_icon" />
+
+            <TextView
+                android:id="@+id/txtView_changePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/img_changePassword"
+                android:text="Change your password"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtView_changePassword"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:layout_toLeftOf="@id/btn_changePassword"
+                android:layout_toRightOf="@id/img_changePassword"
+                android:text="@string/changePassword"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/btn_changePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/black"
+                android:src="@drawable/right_icon" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- Download archive of your data -->
+    <LinearLayout
+        android:id="@+id/LL_dataArchive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_white10_20"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <!--Download archive of your data-->
+        <RelativeLayout
+            android:id="@+id/rel_dataArchive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_download"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/round_back_night_mode"
+                android:padding="12dp"
+                android:src="@drawable/download_icon" />
+
+            <TextView
+                android:id="@+id/txtView_dataArchive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/img_download"
+                android:text="Download an archive of your data"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtView_dataArchive"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:layout_toLeftOf="@id/btn_dataArchive"
+                android:layout_toRightOf="@id/img_download"
+                android:text="@string/dataArchive"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/btn_dataArchive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/black"
+                android:src="@drawable/right_icon" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- Deactivate your account -->
+    <LinearLayout
+        android:id="@+id/LL_deactivateAcc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_white10_20"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <!--Deactivate your account-->
+        <RelativeLayout
+            android:id="@+id/rel_deactivateAcc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_deactivate"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/round_back_night_mode"
+                android:padding="12dp"
+                android:src="@drawable/deactivate_icon" />
+
+            <TextView
+                android:id="@+id/txtView_deactivateAcc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/img_deactivate"
+                android:text="Deactivate your account"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtView_deactivateAcc"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:layout_toLeftOf="@id/btn_deactivateAcc"
+                android:layout_toRightOf="@id/img_deactivate"
+                android:text="@string/deactivateAcc"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/btn_deactivateAcc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/black"
+                android:src="@drawable/right_icon" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

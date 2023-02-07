@@ -16,9 +16,10 @@ public class Courses {
     private String courseUniversity;
     private String courseUniversityDesc;
     private String coursePublishedDate;
+    private String courseLink;
 
 
-    public Courses(int id, int courseImage, int hostImage, String courseTitle, String hostName, String hostDesc, String courseDuration, String courseLessons, String courseDesc, String courseUniversity, String courseUniversityDesc, String coursePublishedDate) {
+    public Courses(int id, int courseImage, int hostImage, String courseTitle, String hostName, String hostDesc, String courseDuration, String courseLessons, String courseDesc, String courseUniversity, String courseUniversityDesc, String coursePublishedDate, String courseLink) {
         this.id = id;
         this.courseImage = courseImage;
         this.hostImage = hostImage;
@@ -31,6 +32,7 @@ public class Courses {
         this.courseUniversity = courseUniversity;
         this.courseUniversityDesc = courseUniversityDesc;
         this.coursePublishedDate = coursePublishedDate;
+        this.courseLink = courseLink;
     }
 
     public Courses() {
@@ -131,5 +133,13 @@ public class Courses {
 
     public void setCoursePublishedDate(String coursePublishedDate) {
         this.coursePublishedDate = coursePublishedDate;
+    }
+
+    public String getCourseLink() {
+        return courseLink;
+    }
+
+    public void setCourseLink(String courseLink) {
+        this.courseLink = courseLink;
     }
 }

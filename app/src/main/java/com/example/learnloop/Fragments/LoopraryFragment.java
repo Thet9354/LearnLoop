@@ -236,7 +236,7 @@ public class LoopraryFragment extends Fragment {
                 String[] courseUniversity = getResources().getStringArray(R.array.course_university);
                 String[] courseUniversityDesc = getResources().getStringArray(R.array.course_universityDesc);
                 String[] coursePublishedDate = getResources().getStringArray(R.array.course_publishedDates);
-
+                String[] courseLink = getResources().getStringArray(R.array.course_link);
 
 
                 for (int i = 0 ; i < courseTitle.length; i++)
@@ -254,6 +254,7 @@ public class LoopraryFragment extends Fragment {
                     courses.setCourseUniversity(courseUniversity[i]);
                     courses.setCourseUniversityDesc(courseUniversityDesc[i]);
                     courses.setCoursePublishedDate(coursePublishedDate[i]);
+                    courses.setCourseLink(courseLink[i]);
 
                     coursesArrayList.add(courses);
                     courses = null;

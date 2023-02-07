@@ -85,6 +85,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CardViewHo
                 intent.putExtra("Course University", coursesArrayList.get(pos).getCourseUniversity());
                 intent.putExtra("University Desc", coursesArrayList.get(pos).getCourseUniversityDesc());
                 intent.putExtra("Published Dates", coursesArrayList.get(pos).getCoursePublishedDate());
+                intent.putExtra("Course Link", coursesArrayList.get(pos).getCourseLink());
+
 
                 intent.putExtra("Course Image", coursesArrayList.get(pos).getCourseImage());
                 intent.putExtra("Host Image", coursesArrayList.get(pos).getHostImage());

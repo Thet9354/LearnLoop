@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_background"
+    android:orientation="vertical"
+    tools:context=".Settings.SettingsFragment.PrivacyAndSafety">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="14dp"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:id="@+id/txtView_privacy_and_safety"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Privacy and safety"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtView_Done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="Done"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/privacy_and_safety"
+                android:layout_gravity="center"
+                android:layout_below="@+id/txtView_yourAccount"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data sharing and off-LearnLoop activity"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@+id/txtView_yourAccount"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"/>
+
+            <!-- Ads preference -->
+            <LinearLayout
+                android:id="@+id/LL_adsPreferences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_back_white10_20"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <!--Ads preference-->
+                <RelativeLayout
+                    android:id="@+id/rel_adPreference"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_adPreference"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_back_night_mode"
+                        android:padding="12dp"
+                        android:src="@drawable/growth_icon" />
+
+                    <TextView
+                        android:id="@+id/txtView_adsPreference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/img_adPreference"
+                        android:text="Ads preferences"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtView_adsPreference"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toLeftOf="@id/btn_adsPreference"
+                        android:layout_toRightOf="@id/img_adPreference"
+                        android:text="@string/adsPreference"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/btn_adsPreference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/right_icon" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Off-SPACED activity -->
+            <LinearLayout
+                android:id="@+id/LL_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_back_white10_20"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <!--Off-SPACED activity-->
+                <RelativeLayout
+                    android:id="@+id/rel_off_spacedActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_offSPACED"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_back_night_mode"
+                        android:padding="12dp"
+                        android:src="@drawable/growth_icon" />
+
+                    <TextView
+                        android:id="@+id/txtView_offSPACED"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/img_offSPACED"
+                        android:text="Off-SPACED activity"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtView_offSPACED"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white"
+                        android:layout_toLeftOf="@id/btn_offSPACED"
+                        android:layout_toRightOf="@id/img_offSPACED"
+                        android:text="@string/off_spaced_activity"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/btn_offSPACED"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/right_icon" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Data sharing -->
+            <LinearLayout
+                android:id="@+id/LL_dataSharing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_back_white10_20"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <!--Data sharing-->
+                <RelativeLayout
+                    android:id="@+id/rel_dataSharing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_dataSharing"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_back_night_mode"
+                        android:padding="12dp"
+                        android:src="@drawable/connected_icon" />
+
+                    <TextView
+                        android:id="@+id/txtView_dataSharing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/img_dataSharing"
+                        android:text="Data sharing with business partners"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtView_dataSharing"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white"
+                        android:layout_toLeftOf="@id/btn_dataSharing"
+                        android:layout_toRightOf="@id/img_dataSharing"
+                        android:text="@string/dataSharing"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/btn_dataSharing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/right_icon" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Location information -->
+            <LinearLayout
+                android:id="@+id/LL_locationInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_back_white10_20"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <!--Location information-->
+                <RelativeLayout
+                    android:id="@+id/rel_locationInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_locationInfo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_back_night_mode"
+                        android:padding="12dp"
+                        android:src="@drawable/location_icon" />
+
+                    <TextView
+                        android:id="@+id/txtView_locationInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/img_locationInfo"
+                        android:text="Location information"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtView_locationInfo"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white"
+                        android:layout_toLeftOf="@id/btn_locationInfo"
+                        android:layout_toRightOf="@id/img_locationInfo"
+                        android:text="@string/locationInfo"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/btn_locationInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/right_icon" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Learn more about privacy on LearnLoop"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@+id/txtView_yourAccount"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_back_white10_20"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <!--Privacy center-->
+                <RelativeLayout
+                    android:id="@+id/rel_privacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtView_privacyCenter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Privacy center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:id="@+id/btn_privacyCenter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/right_icon" />
+
+                </RelativeLayout>
+
+                <!--Privacy policy-->
+                <RelativeLayout
+                    android:id="@+id/rel_privacyPolicy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/txtView_privacyPolicy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Privacy policy"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:id="@+id/btn_privacyPolicy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/right_icon" />
+
+                </RelativeLayout>
+
+                <!--Contact us-->
+                <RelativeLayout
+                    android:id="@+id/rel_contactus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/txtView_contactUs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Contact us"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:id="@+id/btn_contactUs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/right_icon" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

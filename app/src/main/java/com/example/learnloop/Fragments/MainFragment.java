@@ -4,12 +4,10 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,15 +21,12 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.learnloop.AboutActivity;
 import com.example.learnloop.AboutUs_Activity;
 import com.example.learnloop.Adapter.RecentTransactionAdapter;
-import com.example.learnloop.MainActivity;
 import com.example.learnloop.Model.Transaction;
-import com.example.learnloop.Onboarding.LoginActivity;
 import com.example.learnloop.R;
+import com.example.learnloop.Settings.Setting_Activity;
 import com.example.learnloop.SpaceItemDecoration;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -51,7 +46,7 @@ public class MainFragment extends Fragment {
 
     private androidx.cardview.widget.CardView cv_cardWallet;
 
-    private ImageView btn_about;
+    private ImageView btn_about, btn_setting;
 
     private RecentTransactionAdapter recentTransactionAdapter;
 
@@ -107,6 +102,7 @@ public class MainFragment extends Fragment {
 
         //Imageview
         btn_about = v.findViewById(R.id.btn_about);
+        btn_setting = v.findViewById(R.id.btn_setting);
 
         //RecyclerView
         rv_recentTransaction = v.findViewById(R.id.rv_recentTransaction);
@@ -117,7 +113,6 @@ public class MainFragment extends Fragment {
         getIntentData();
 
         initUI();
-
 
         pageDirectories();
     }
@@ -190,6 +185,13 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getActivity().startActivity(new Intent(mContext, AboutUs_Activity.class));
+            }
+        });
+
+        btn_setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(mContext, Setting_Activity.class));
             }
         });
     }
