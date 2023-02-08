@@ -19,11 +19,20 @@ import android.view.WindowManager;
 import com.example.learnloop.Adapter.CourseAdapter;
 import com.example.learnloop.Adapter.EventsAdapter;
 // import com.example.learnloop.Looprary.CourseModel;
+import com.example.learnloop.Adapter.InProgressAdapter;
 import com.example.learnloop.Model.Courses;
 import com.example.learnloop.Model.Events;
+import com.example.learnloop.Model.InProgress;
+import com.example.learnloop.Model.Transaction;
 import com.example.learnloop.R;
 import com.example.learnloop.SpaceItemDecoration;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class LoopraryFragment extends Fragment {
@@ -38,7 +47,14 @@ public class LoopraryFragment extends Fragment {
     private CourseAdapter courseAdapter;
     private ArrayList<Courses> coursesArrayList = new ArrayList<>();
 
+    private InProgressAdapter inProgressAdapter;
+    private ArrayList<InProgress> inProgressArrayList = new ArrayList<>();
+
+    String phoneNumber = "93542856";
+
     private Context mContext;
+
+    InProgress inProgress;
 
     int[] coursePic = {R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101,
             R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101, R.drawable.course_investments101,
@@ -57,6 +73,9 @@ public class LoopraryFragment extends Fragment {
 
     int[] eventHostPic = {R.drawable.smu_logo, R.drawable.smu_logo, R.drawable.smu_logo,
             R.drawable.smu_logo, R.drawable.smu_logo};
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://learnloop-1673224439925-default-rtdb.asia-southeast1.firebasedatabase.app/");
+    DatabaseReference databaseReference  = database.getReference().child("users");
 
     private static final String[] COURSENAME = new String[]{
             "Investment 101",
@@ -95,16 +114,70 @@ public class LoopraryFragment extends Fragment {
         rv_inProgress = v.findViewById(R.id.rv_inProgress);
         rv_course = v.findViewById(R.id.rv_course);
 
+        getIntentData();
+    }
+
+    private void getIntentData() {
+
+        phoneNumber = getArguments().getString("Phone Number");
+
+        if (phoneNumber == null)
+        {
+            phoneNumber = "93542856";
+        }
+        else
+            return;
+
         initUI();
     }
 
     private void initUI() {
 
-        //TODO: Init all 3 recyclerView
         initEventRecView();
-
         initCourseRecView();
+        initInProgressRecView();
 
+    }
+
+    private void initInProgressRecView() {
+
+        //for better performance of recyclerview.
+
+        int spaceInPixels = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
+        rv_inProgress.addItemDecoration(new SpaceItemDecoration(spaceInPixels));
+
+        rv_inProgress.setHasFixedSize(true);
+
+        inProgressAdapter = new InProgressAdapter(getContext(), inProgressArrayList);
+        rv_inProgress.setAdapter(inProgressAdapter);
+
+        //layout to contain recyclerview
+        LinearLayoutManager llm = new LinearLayoutManager(mContext);
+        llm.setSmoothScrollbarEnabled(true);
+        // orientation of linearlayoutmanager.
+        llm.setOrientation(LinearLayoutManager.HORIZONTAL);
+        llm.setAutoMeasureEnabled(true);
+
+        //set layoutmanager for recyclerview.
+        rv_inProgress.setLayoutManager(llm);
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot: snapshot.child(phoneNumber).child("User's Courses").getChildren())
+                {
+                    inProgress = dataSnapshot.getValue(InProgress.class);
+                    inProgressArrayList.add(inProgress);
+                }
+                inProgressAdapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void initCourseRecView() {

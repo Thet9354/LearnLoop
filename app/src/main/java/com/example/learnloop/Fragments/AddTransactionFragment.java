@@ -72,7 +72,7 @@ public class AddTransactionFragment extends Fragment {
 
     private Context mContext;
 
-    private String name, phoneNumber, email, password;
+    private String name, phoneNumber = "93542856", email, password;
 
     //Variable to store transaction details in
     private String mTransactionFlow, mTitle, mAmount, mPurpose, mDesc, mLocation;
@@ -149,9 +149,12 @@ public class AddTransactionFragment extends Fragment {
         email = getArguments().getString("Email");
         password = getArguments().getString("Password");
 
-        System.out.println(name);
-        System.out.println(email);
-        System.out.println(password);
+        if (phoneNumber == null)
+        {
+            phoneNumber = "93542856";
+        }
+        else
+            return;
 
     }
 

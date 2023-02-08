@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         chipNavigationBar = findViewById(R.id.menu);
         chipNavigationBar.setItemSelected(R.id.bottom_nav_main, true);
 
+
 //        Bundle bundle = new Bundle();
 //        bundle.putString("Name", name);
 //        bundle.putString("Email", email);
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 //        fragment.setArguments(bundle);
 //
 //        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+
 
         bottomMenu();
     }

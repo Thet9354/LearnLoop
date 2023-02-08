@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_inProgress"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardUseCompatPadding="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:background="#2C2C2C"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rel_inProgress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_rect_10">
+
+                <ImageView
+                    android:id="@+id/imgView_inProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/rounded_rect_10_white"
+                    android:src="@drawable/budgeting_principles" />
+
+                <TextView
+                    android:id="@+id/txtView_inProgressCourse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imgView_inProgress"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/thin_poppins"
+                    android:text="@string/course1_title"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <RelativeLayout
+                    android:id="@+id/course1_hoster"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtView_inProgressCourse"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/imgView_inProgressHost"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/sing_pfp" />
+
+                    <TextView
+                        android:id="@+id/txtView_inProgressHost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toRightOf="@id/imgView_inProgressHost"
+                        android:fontFamily="@font/thin_poppins"
+                        android:text="@string/course1_lecturer"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentEnd="true">
+
+                        <TextView
+                            android:id="@+id/textView26"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:drawableLeft="@drawable/ic_baseline_star_24"
+                            android:drawablePadding="5dp"
+                            android:gravity="left"
+                            android:text="4.9"
+                            android:textColor="@color/white"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/saveButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="15dp"
+                            android:clickable="true"
+                            android:drawableLeft="@drawable/save_icon"
+                            android:drawablePadding="5dp"
+                            android:fontFamily="@font/thin_poppins"
+                            android:gravity="left"
+                            android:padding="3dp"
+                            android:text="Save"
+                            android:textColor="@color/white"
+                            android:textSize="12dp"
+                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtView_inProgressHostDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtView_inProgressHost"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toRightOf="@id/imgView_inProgressHost"
+                        android:fontFamily="@font/thin_poppins"
+                        android:text="@string/course1_lecturerpos"
+                        android:textColor="@color/hint"
+                        android:textSize="10dp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/course1_hoster"
+                    android:gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/thin_poppins"
+                    android:text="Remaining: 4 Lessons"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:layout_alignParentBottom="false"
+                    />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

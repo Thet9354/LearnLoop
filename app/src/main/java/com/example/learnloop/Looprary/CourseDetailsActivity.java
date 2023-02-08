@@ -111,12 +111,15 @@ public class CourseDetailsActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-                builder.setNegativeButton("View externally", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("Share", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Uri uri = Uri.parse(courseLink);
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        startActivity(intent);
+//                        String url = "https://www.webmd.com/diet/features/is-your-diet-aging-you";
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("text/plain");
+                        intent.putExtra(Intent.EXTRA_SUBJECT, "Check out this cool ass NFT");
+                        intent.putExtra(Intent.EXTRA_TEXT, courseLink);
+                        startActivity(Intent.createChooser(intent, "Share Via"));
                     }
                 });
                 builder.create().show();
