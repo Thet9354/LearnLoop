@@ -13,7 +13,11 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -53,6 +57,7 @@ public class EventDetailsActivity extends AppCompatActivity {
 
     private String mEmail = "thetpine254@gmail.com";
     private String mPhoneNumber = "93542856";
+
 
     private Intent intent;
 
@@ -114,9 +119,31 @@ public class EventDetailsActivity extends AppCompatActivity {
         txtView_seeMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse(eventLink);
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(EventDetailsActivity.this);
+                builder.setTitle("View Link");
+                builder.setMessage("Do you wish to visit the link within or outside the app?");
+                builder.setPositiveButton("View Page in App", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Intent intent = new Intent(getApplicationContext(), WebView_Activity.class);
+                        intent.putExtra("Link", eventLink);
+                        startActivity(intent);
+                    }
+                });
+                builder.setNegativeButton("View externally", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Uri uri = Uri.parse(eventLink);
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+                    }
+                });
+                builder.create().show();
+
+
+
             }
         });
 
@@ -278,4 +305,5 @@ public class EventDetailsActivity extends AppCompatActivity {
         //LinearLayout
         eventParent = findViewById(R.id.eventParent);
     }
+
 }

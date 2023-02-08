@@ -1,8 +1,10 @@
 package com.example.learnloop.Looprary;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -93,6 +95,33 @@ public class CourseDetailsActivity extends AppCompatActivity {
     }
 
     private void pageDirectories() {
+
+        txtView_seeMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(CourseDetailsActivity.this);
+                builder.setTitle("View Link");
+                builder.setMessage("Do you wish to visit the link within or outside the app?");
+                builder.setPositiveButton("View Page in App", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Intent intent = new Intent(getApplicationContext(), WebView_Activity.class);
+                        intent.putExtra("Link", courseLink);
+                        startActivity(intent);
+                    }
+                });
+                builder.setNegativeButton("View externally", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Uri uri = Uri.parse(courseLink);
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+                    }
+                });
+                builder.create().show();
+            }
+        });
 
         btn_addToCalendar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -236,7 +265,6 @@ public class CourseDetailsActivity extends AppCompatActivity {
         });
 
     }
-
 
     private void initUI() {
 

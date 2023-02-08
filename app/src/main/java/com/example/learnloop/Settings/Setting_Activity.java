@@ -78,7 +78,6 @@ public class Setting_Activity extends AppCompatActivity {
                     case R.id.nav_additionalResource:
                         replaceFragment(new AdditionalResources());
                         break;
-
                 }
                 return false;
             }
