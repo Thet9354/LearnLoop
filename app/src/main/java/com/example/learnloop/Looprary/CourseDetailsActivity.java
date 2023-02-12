@@ -114,7 +114,6 @@ public class CourseDetailsActivity extends AppCompatActivity {
                 builder.setNegativeButton("Share", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-//                        String url = "https://www.webmd.com/diet/features/is-your-diet-aging-you";
                         Intent intent = new Intent(Intent.ACTION_SEND);
                         intent.setType("text/plain");
                         intent.putExtra(Intent.EXTRA_SUBJECT, "Check out this cool ass NFT");
