@@ -175,7 +175,6 @@ public class AskInformationActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     private boolean validateBudgetGoal() {

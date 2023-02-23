@@ -11,6 +11,7 @@ import com.example.learnloop.Fragments.AddTransactionFragment;
 import com.example.learnloop.Fragments.DiscountFragment;
 import com.example.learnloop.Fragments.LoopraryFragment;
 import com.example.learnloop.Fragments.MainFragment;
+import com.example.learnloop.Fragments.StatementFragment;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,18 +48,6 @@ public class MainActivity extends AppCompatActivity {
         chipNavigationBar = findViewById(R.id.menu);
         chipNavigationBar.setItemSelected(R.id.bottom_nav_main, true);
 
-
-//        Bundle bundle = new Bundle();
-//        bundle.putString("Name", name);
-//        bundle.putString("Email", email);
-//        bundle.putString("Password", password);
-//
-//        Fragment fragment = new MainFragment();
-//        fragment.setArguments(bundle);
-//
-//        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
-
-
         bottomMenu();
     }
 
@@ -76,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.bottom_nav_learning:
                         fragment = new LoopraryFragment();
+                        break;
+                    case R.id.bottom_nav_statement:
+                        fragment = new StatementFragment();
                         break;
                     case R.id.bottom_nav_discount:
                         fragment = new DiscountFragment();

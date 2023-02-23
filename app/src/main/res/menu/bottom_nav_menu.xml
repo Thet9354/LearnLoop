@@ -27,6 +27,14 @@
         app:cnb_textColor="@color/black"/>
 
     <item
+        android:id="@+id/bottom_nav_statement"
+        android:title="Statement"
+        android:icon="@drawable/ic_baseline_local_atm_24"
+        app:cnb_backgroundColor="@color/teal_200"
+        app:cnb_iconColor="@color/black"
+        app:cnb_textColor="@color/black"/>
+
+    <item
         android:id="@+id/bottom_nav_discount"
         android:title="Discount"
         android:icon="@drawable/ic_baseline_discount_24"

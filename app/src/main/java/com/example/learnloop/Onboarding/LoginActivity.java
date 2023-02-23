@@ -128,6 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                 super.onAuthenticationSucceeded(result);
                 //Authentication successful
                 Toast.makeText(LoginActivity.this, "Authentication successful", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
 
             @Override
@@ -217,7 +218,6 @@ public class LoginActivity extends AppCompatActivity {
         else
             return true;
     }
-
 
     private void googleSignIn() {
         Intent signInIntent = gsc.getSignInIntent();
