@@ -21,6 +21,11 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.sql.Array;
 import java.util.ArrayList;
@@ -33,6 +38,9 @@ public class StatementFragment extends Fragment {
 
     private com.github.mikephil.charting.charts.BarChart bar_chart;
     private com.github.mikephil.charting.charts.PieChart pie_chart;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://learnloop-1673224439925-default-rtdb.asia-southeast1.firebasedatabase.app/");
+    DatabaseReference databaseReference  = database.getReference().child("users");
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,6 +81,29 @@ public class StatementFragment extends Fragment {
         ArrayList<BarEntry> barEntries = new ArrayList<>();
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
 
+        /**
+        //Connect firebase to pie chart
+        databaseReference.child("User Transaction").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot data : snapshot.getChildren()) {
+
+                    String key = data.getKey();
+
+                    float value = Float.parseFloat(data.child("value").getValue().toString());
+                    String label = data.child("label").getValue().toString();
+
+                    pieDataSet.addEntry(new PieEntry(value, label));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        })
+         */
+
         for (int i=1; i<13; i++){
             float value = (float) (i*10.0);
             BarEntry barEntry = new BarEntry(i, value);
@@ -87,18 +118,19 @@ public class StatementFragment extends Fragment {
             pieEntries.add(pieEntry);
         }
 
-        BarDataSet barDataSet = new BarDataSet(barEntries, "Employees");
+        BarDataSet barDataSet = new BarDataSet(barEntries, "Monthly Expenditures");
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        barDataSet.setDrawValues(false);
+        barDataSet.setValueTextColor(Color.WHITE);
         bar_chart.setData(new BarData(barDataSet));
         bar_chart.animateY(2000);
-        bar_chart.getDescription().setText("Lolz");
-        bar_chart.getDescription().setTextColor(Color.BLUE);
 
-        PieDataSet pieDataSet = new PieDataSet(pieEntries, "Students");
+        PieDataSet pieDataSet = new PieDataSet(pieEntries, "Expenditure Category");
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        pieDataSet.setValueTextColor(Color.WHITE);
         pie_chart.setData(new PieData(pieDataSet));
         pie_chart.animateXY(2000, 2000);
         pie_chart.getDescription().setEnabled(false);
+
+
     }
 }

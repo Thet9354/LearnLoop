@@ -1,8 +1,10 @@
 package com.example.learnloop.Fragments;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
@@ -12,6 +14,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -170,9 +174,23 @@ public class AddTransactionFragment extends Fragment {
         btn_uploadTransaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(camera, requestCamera1);
+
+                if (ContextCompat.checkSelfPermission(mContext, android.Manifest.permission.CAMERA)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    // Permission is not granted, request the permission
+                    ActivityCompat.requestPermissions(getActivity(),
+                            new String[]{Manifest.permission.CAMERA},
+                            requestCamera1);
+                } else {
+
+                    Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(camera, requestCamera1);
+                }
+
+
+
             }
+
         });
 
         btn_getLocation.setOnClickListener(new View.OnClickListener() {
@@ -486,5 +504,14 @@ public class AddTransactionFragment extends Fragment {
 
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            // Permission has been granted, start the camera activity
+        } else {
+            // Permission has been denied, show an explanation or disable the feature that requires the permission
+        }
+    }
 }

@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.learnloop.Fragments.AddTransactionFragment;
 import com.example.learnloop.Fragments.DiscountFragment;
@@ -17,6 +20,11 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 public class MainActivity extends AppCompatActivity {
 
     ChipNavigationBar chipNavigationBar;
+    private com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton fab_parent;
+    private com.google.android.material.floatingactionbutton.FloatingActionButton fab_faq, fab_FA_AI;
+    private TextView txtView_ai, txtView_faq;
+
+    private Boolean isAllFABVisible;
 
     Intent intent;
 
@@ -46,9 +54,83 @@ public class MainActivity extends AppCompatActivity {
 
     private void initWidget() {
         chipNavigationBar = findViewById(R.id.menu);
+
+        //FAB
+        fab_parent = findViewById(R.id.fab_parent);
+        fab_faq = findViewById(R.id.fab_faq);
+        fab_FA_AI = findViewById(R.id.fab_FA_AI);
+
+        //TextView
+        txtView_ai = findViewById(R.id.txtView_ai);
+        txtView_faq = findViewById(R.id.txtView_faq);
+
         chipNavigationBar.setItemSelected(R.id.bottom_nav_main, true);
 
+        initUI();
+
         bottomMenu();
+
+    }
+
+    private void initUI() {
+
+        fab_faq.setVisibility(View.GONE);
+        fab_FA_AI.setVisibility(View.GONE);
+        txtView_faq.setVisibility(View.GONE);
+        txtView_ai.setVisibility(View.GONE);
+
+        isAllFABVisible = false;
+
+        fab_parent.shrink();
+
+        pageDirectories();
+
+    }
+
+    private void pageDirectories() {
+
+        fab_parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (!isAllFABVisible)
+                {
+                    fab_faq.show();
+                    fab_FA_AI.show();
+                    txtView_faq.setVisibility(View.VISIBLE);
+                    txtView_ai.setVisibility(View.VISIBLE);
+
+                    fab_parent.extend();
+
+                    isAllFABVisible = true;
+                }
+                else
+                {
+                    fab_faq.hide();
+                    fab_FA_AI.hide();
+                    txtView_faq.setVisibility(View.GONE);
+                    txtView_ai.setVisibility(View.GONE);
+
+                    fab_parent.shrink();
+
+                    isAllFABVisible = false;
+                }
+            }
+        });
+
+        fab_faq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "FAQ", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        fab_FA_AI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "FA AI", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void bottomMenu() {
