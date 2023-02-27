@@ -12,12 +12,12 @@
         android:id="@+id/fab_parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Assistance"
+        android:text="Help"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="100dp"
         android:layout_marginEnd="15dp"
-        app:icon="@drawable/ic_baseline_chat_24"
+        app:icon="@drawable/ic_baseline_question_mark_24"
         android:textAllCaps="false"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
