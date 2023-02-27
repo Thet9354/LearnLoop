@@ -38,6 +38,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".FinanceBot.ChatBot_Activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MapActiivty2"
             android:exported="false">
             <meta-data

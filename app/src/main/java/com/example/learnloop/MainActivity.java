@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.learnloop.FinanceBot.ChatBot_Activity;
 import com.example.learnloop.Fragments.AddTransactionFragment;
 import com.example.learnloop.Fragments.DiscountFragment;
 import com.example.learnloop.Fragments.LoopraryFragment;
@@ -21,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     ChipNavigationBar chipNavigationBar;
     private com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton fab_parent;
-    private com.google.android.material.floatingactionbutton.FloatingActionButton fab_faq, fab_FA_AI;
-    private TextView txtView_ai, txtView_faq;
+    private com.google.android.material.floatingactionbutton.FloatingActionButton fab_setting, fab_FA_AI;
+    private TextView txtView_ai, txtView_setting;
 
     private Boolean isAllFABVisible;
 
@@ -57,26 +58,25 @@ public class MainActivity extends AppCompatActivity {
 
         //FAB
         fab_parent = findViewById(R.id.fab_parent);
-        fab_faq = findViewById(R.id.fab_faq);
+        fab_setting = findViewById(R.id.fab_setting);
         fab_FA_AI = findViewById(R.id.fab_FA_AI);
 
         //TextView
         txtView_ai = findViewById(R.id.txtView_ai);
-        txtView_faq = findViewById(R.id.txtView_faq);
+        txtView_setting = findViewById(R.id.txtView_setting);
 
         chipNavigationBar.setItemSelected(R.id.bottom_nav_main, true);
 
         initUI();
 
         bottomMenu();
-
     }
 
     private void initUI() {
 
-        fab_faq.setVisibility(View.GONE);
+        fab_setting.setVisibility(View.GONE);
         fab_FA_AI.setVisibility(View.GONE);
-        txtView_faq.setVisibility(View.GONE);
+        txtView_setting.setVisibility(View.GONE);
         txtView_ai.setVisibility(View.GONE);
 
         isAllFABVisible = false;
@@ -95,9 +95,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if (!isAllFABVisible)
                 {
-                    fab_faq.show();
+                    fab_setting.show();
                     fab_FA_AI.show();
-                    txtView_faq.setVisibility(View.VISIBLE);
+                    txtView_setting.setVisibility(View.VISIBLE);
                     txtView_ai.setVisibility(View.VISIBLE);
 
                     fab_parent.extend();
@@ -106,9 +106,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    fab_faq.hide();
+                    fab_setting.hide();
                     fab_FA_AI.hide();
-                    txtView_faq.setVisibility(View.GONE);
+                    txtView_setting.setVisibility(View.GONE);
                     txtView_ai.setVisibility(View.GONE);
 
                     fab_parent.shrink();
@@ -118,17 +118,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        fab_faq.setOnClickListener(new View.OnClickListener() {
+        fab_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "FAQ", Toast.LENGTH_SHORT).show();
+                //TODO: Create Settings page
             }
         });
 
         fab_FA_AI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "FA AI", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), ChatBot_Activity.class));
             }
         });
     }

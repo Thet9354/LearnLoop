@@ -40,9 +40,8 @@ public class LoopraryFragment extends Fragment {
     //RecyclerView
     private RecyclerView rv_events, rv_inProgress, rv_course;
 
-    private final ArrayList<Events> eventsArrayList = new ArrayList<>();
-
     private EventsAdapter eventsAdapter;
+    private final ArrayList<Events> eventsArrayList = new ArrayList<>();
 
     private CourseAdapter courseAdapter;
     private ArrayList<Courses> coursesArrayList = new ArrayList<>();
